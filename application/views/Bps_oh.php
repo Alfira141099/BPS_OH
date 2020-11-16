@@ -45,8 +45,8 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-10 col-lg-10">
-                            <div class="main-menu  d-none d-lg-block">
+                        <div class="col-xl-9 col-lg-10">
+                            <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="<?php echo base_url('Bps_oh')?>">home</a></li>
