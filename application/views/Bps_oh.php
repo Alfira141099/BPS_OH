@@ -121,7 +121,11 @@
                     </div>
                 </div>
             </div>
-            <h2> Integrasi Pengolahan dan Diseminasi Statistik</h2>
+            <div class="col-xl-12">
+                <div class="section_title text-center mb-80">
+            <h4>Integrasi Pengolahan dan Diseminasi Statistik</h4>
+            </div>
+                </div>
             <div class="row">
                 <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_prising">
@@ -687,7 +691,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
                         <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
                     </a>
                 </div>
-                <h3>Sign in</h3>
+                <h3><center>Masuk Sebagai Kasi</center></h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
@@ -717,7 +721,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
                         <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
                     </a>
                 </div>
-                <h3>Registration</h3>
+                <h3><center>Registration</center></h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
