@@ -118,14 +118,12 @@
                         <h3>
                             Choose your Hosting Plan
                         </h3>
-                        <p>Your domain control panel is designed for ease-of-use and <br>
-                            allows for all aspects of your domains.
-                        </p>
                     </div>
                 </div>
             </div>
+            <h2> Integrasi Pengolahan dan Diseminasi Statistik</h2>
             <div class="row">
-                <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_prising">
                         <div class="prising_icon blue">
                             <i class="flaticon-servers"></i>
@@ -136,7 +134,7 @@
                         <a href="#" class="boxed_btn_green2">Start Now</a>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_prising">
                         <div class="prising_icon lite_blue">
                             <i class="flaticon-hosting"></i>
@@ -147,7 +145,7 @@
                         <a href="#" class="boxed_btn_green2">Start Now</a>
                     </div>
                 </div>
-                <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_prising">
                         <div class="prising_icon pink">
                             <i class="flaticon-wordpress"></i>
@@ -158,7 +156,7 @@
                         <a href="#" class="boxed_btn_green2">Start Now</a>
                     </div>
                 </div> 
-                <div class="col-xl-3 col-md-6 col-lg-6">
+                <div class="col-xl-6 col-md-6 col-lg-6">
                     <div class="single_prising">
                         <div class="prising_icon yellow">
                             <i class="flaticon-servers-1"></i>
@@ -670,7 +668,7 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> <i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS Kab Probolinggo<i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         </p>
                     </div>
