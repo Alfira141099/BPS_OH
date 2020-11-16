@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BPS</title>
+    <title>BPS OH</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -34,14 +34,14 @@
 
     <!-- header-start -->
     <header>
-        <div class="header-area ">
+        <div class="header-area " id="navigasi">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center no-gutters">
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
                                 <a href="<?php echo base_url('Bps_oh')?>">
-                                    <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
+                                    <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="60" weight="90">
                                 </a>
                             </div>
                         </div>
