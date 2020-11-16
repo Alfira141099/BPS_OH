@@ -1063,7 +1063,7 @@ h3 {
   -webkit-transition: transform 500ms ease, background 500ms ease;
   box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1);
   padding: 10px 150px;
-  background: #2E004B;
+  background: #001A6E;
 }
 
 @media (max-width: 767px) {
@@ -3096,7 +3096,7 @@ h3 {
 
 /* line 1, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_footer.scss */
 .footer {
-  background: #2E004B;
+  background: #001A6E;
 }
 
 /* line 3, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_footer.scss */
