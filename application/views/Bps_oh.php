@@ -45,7 +45,7 @@
                                 </a>
                             </div>
                         </div>
-                        <div class="col-xl-7 col-lg-7">
+                        <div class="col-xl-10 col-lg-10">
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
@@ -116,7 +116,7 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            Choose your Hosting Plan
+                            Staff BPS Kabupaten Probolinggo
                         </h3>
                     </div>
                 </div>
@@ -605,16 +605,16 @@
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="col-xl-10 col-md-12 col-lg-10">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
-                                    <img src="<?php echo base_url('img/LogoBPS.png')?>" alt="" height="70" weight="90">
+                                    <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
                                 </a>
                             </div>
-                            <p class="footer_text doanar"> <a class="first" href="#">+10 783 467 3789
+                            <p class="footer_text doanar"> <a class="first" href="#">(0335) 422117
                                 </a> <br>
-                                <a href="#">hostza@support.com</a></p>
+                                <a href="#">bps3513@bps.go.id</a> </p>
                             <div class="socail_links">
                                 <ul>
                                     <li>
@@ -638,10 +638,9 @@
                                 service
                             </h3>
                             <ul>
-                                <li><a href="#">Hosting</a></li>
-                                <li><a href="#">Domain</a></li>
-                                <li><a href="#">Wordpress</a></li>
-                                <li><a href="#">Shared Hosting</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Jadwal</a></li>
+                                <li><a href="#">Daftar Staff</a></li>
                             </ul>
 
                         </div>
