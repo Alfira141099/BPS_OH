@@ -28,59 +28,31 @@
 </head>
 <body>
 
-	<!-- Outer Row -->
-	<form id="test-form">
-    <div class="row justify-content-center">
-
-      <div class="col-xl-10 col-lg-12 col-md-9">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-          <div class="card-body p-0">
-            <!-- Nested Row within Card Body -->
-            <div class="row">
-              <div class="col-lg-6 d-none d-lg-block"></div>
-              <div class="col-lg-6">
-                <div class="p-5">
-                  <div class="text-center">
-                  	<div class="logo text-center">
+	<!-- form itself end-->
+    <form id="test-form">
+        <div class="loginform">
+          <div class="login_inner">
+                <div class="logo text-center">
                     <a href="#">
                         <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
                     </a>
                 </div>
-                    <h1 class="h4 text-gray-900 mb-4">Masukkan Pin</h1>
-                  </div>
-                  <form>
-                  	<div class="row">
+                <h3><center>Masukkan Pin</center></h3>
+                <form action="#">
+                    <div class="row">
                         <div class="col-xl-12 col-md-12">
                             <input type="email" placeholder="Email">
-                        </div>
-                        <div class="col-xl-12 col-md-12">
-                            <input type="password" placeholder="Password">
                         </div>
                         <div class="col-xl-12">
                             <button type="submit" class="boxed_btn_green">Sign in</button>
                         </div>
                     </div>
-                  </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="forgot-password.html">Forgot Password?</a>
-                  </div>
-                  <div class="text-center">
-                    <a class="small" href="register.html">Create an Account!</a>
-                  </div>
-                </div>
+                </form>
+                <a class="dont-hav-acc" href="#test-form2">Lupa Pin ?</a>
               </div>
-            </div>
-          </div>
         </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</form>
+    </form>
+    <!-- form itself end -->
 
 
 </body>

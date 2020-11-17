@@ -1,0 +1,132 @@
+#test-form {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.loginform {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: #9053c7;
+  background: -webkit-linear-gradient(-135deg, #66ff3f, #4158d0);
+  background: -o-linear-gradient(-135deg, #66ff3f, #4158d0);
+  background: -moz-linear-gradient(-135deg, #66ff3f, #4158d0);
+  background: linear-gradient(-135deg, #66ff3f, #4158d0);
+}
+.loginform {
+ background: #fff;
+  display: inline-block;
+  width: 558px;
+  padding: 60px 40px;
+  border-radius: 5px;
+  z-index: 9;
+}
+
+@media (max-width: 767px) {
+  /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform {
+    width: 320px;
+    padding: 45px 30px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform {
+    width: 420px !important;
+    padding: 45px 30px;
+  }
+}
+
+/* line 129, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform .logo {
+  margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  /* line 129, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform .logo {
+    margin-bottom: 30px;
+  }
+}
+
+/* line 135, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform h3 {
+  font-size: 24px;
+  color: #1F1F1F;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+@media (max-width: 767px) {
+  /* line 135, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform h3 {
+    margin-bottom: 15px;
+  }
+}
+
+/* line 144, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform .boxed-btn3 {
+  width: 100%;
+  text-transform: capitalize;
+}
+
+/* line 148, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform .boxed_btn_green {
+  width: 100%;
+}
+
+/* line 151, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+.loginform .nice-select {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #fff;
+  /* border-radius: 5px; */
+  border: solid 1px #E2E2E2;
+  box-sizing: border-box;
+  clear: both;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  width: 100% !important;
+  /* height: 42px; */
+  line-height: 50px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  white-space: nowrap;
+  width: auto;
+  border-radius: 0;
+  margin-bottom: 30px;
+  height: 50px !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: #919191;
+}
+
+#test-form .login_inner .gj-datepicker span {
+  color: red;
+}
+
+/* line 189, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
+#test-form input {
+  width: 100%;
+  height: 50px;
+}
