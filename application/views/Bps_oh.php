@@ -97,7 +97,7 @@
                             <h3>BPS Kabupaten Probolinggo</h3>
                             <div class="find_dowmain">
                                 <form action="#" class="find_dowmain_form">
-                                    <input type="text" placeholder="Temukan nama"> 
+                                  <td>  <input type="text" name="nama" id="nama" placeholder="Temukan nama">  </td>
                                     <button type="submit" id="find">cari</button>
                                 </form>
                             </div>
@@ -609,7 +609,7 @@
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-10 col-md-12 col-lg-10">
+                    <div class="col-xl-12 col-md-12 col-lg-12">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">

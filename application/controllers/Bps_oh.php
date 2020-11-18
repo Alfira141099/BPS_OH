@@ -7,4 +7,9 @@ class Bps_oh extends CI_Controller {
 		$this->load->view('Bps_Oh');
 	}
 
+	public function input()
+	{
+		$this->load->view('input_kasi');
+	}
+
 	}
