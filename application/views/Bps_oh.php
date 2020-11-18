@@ -642,9 +642,8 @@
                                 service
                             </h3>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Jadwal</a></li>
-                                <li><a href="#">Daftar Staff</a></li>
+                                <li><a href="#">Tentang</a></li>
+                                <li><a href="#">Panduan</a></li>
                             </ul>
 
                         </div>
