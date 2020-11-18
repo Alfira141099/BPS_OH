@@ -908,7 +908,7 @@ h3 {
 
 /* line 106, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a {
-  color: #fff;
+  color: rgb(6, 160, 250);
   font-size: 16px;
   text-transform: capitalize;
   font-weight: 600;
