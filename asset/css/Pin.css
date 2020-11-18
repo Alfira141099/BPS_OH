@@ -1,28 +1,23 @@
-#test-form {
+body{
+  background-color: #C0C4FE;
+}
+
+#test-form .limiter input {
   width: 100%;
-  margin: 0 auto;
+  height: 40px;
+}
+
+/* line 194, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
+#test-form .boxed_btn_green {
+  width: 100%;
+  height: 50px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  border-radius: 30px;
 }
 
 .loginform {
-  width: 100%;  
-  min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-  background: #9053c7;
-  background: -webkit-linear-gradient(-135deg, #66ff3f, #4158d0);
-  background: -o-linear-gradient(-135deg, #66ff3f, #4158d0);
-  background: -moz-linear-gradient(-135deg, #66ff3f, #4158d0);
-  background: linear-gradient(-135deg, #66ff3f, #4158d0);
-}
-.loginform {
- background: #fff;
+  background: #fff;
   display: inline-block;
   width: 558px;
   padding: 60px 40px;
@@ -34,7 +29,8 @@
   /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
   .loginform {
     width: 320px;
-    padding: 45px 30px;
+    padding: 60px 30px;
+    margin-top: 50px;
   }
 }
 
@@ -42,7 +38,7 @@
   /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
   .loginform {
     width: 420px !important;
-    padding: 45px 30px;
+    padding: 30px 20px;
   }
 }
 
@@ -73,6 +69,13 @@
   }
 }
 
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  /* line 110, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
+  .loginform h3 {
+    font-size: 15px;
+  }
+}
+
 /* line 144, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
 .loginform .boxed-btn3 {
   width: 100%;
@@ -84,49 +87,32 @@
   width: 100%;
 }
 
-/* line 151, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_bradcam.scss */
-.loginform .nice-select {
-  -webkit-tap-highlight-color: transparent;
-  background-color: #fff;
-  /* border-radius: 5px; */
-  border: solid 1px #E2E2E2;
-  box-sizing: border-box;
-  clear: both;
-  cursor: pointer;
-  display: block;
-  float: left;
-  font-family: "Roboto", sans-serif;
-  font-weight: normal;
-  width: 100% !important;
-  /* height: 42px; */
-  line-height: 50px;
-  outline: none;
-  padding-left: 18px;
-  padding-right: 30px;
-  position: relative;
-  text-align: left !important;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  white-space: nowrap;
-  width: auto;
-  border-radius: 0;
-  margin-bottom: 30px;
-  height: 50px !important;
-  font-size: 16px;
-  font-weight: 400;
-  color: #919191;
+.loginform a {
+  font-size: 15px;
+  font-family:  
+  color: #0181F5;
+  margin-top: 10px;
+  font-weight: 200;
 }
 
-#test-form .login_inner .gj-datepicker span {
-  color: red;
-}
-
-/* line 189, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
-#test-form input {
+.login_inner input {
   width: 100%;
+  margin-bottom: 30px;
+  color: #000;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
   height: 50px;
+  padding-left: 30px;
+}
+
+/* line 253, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
+.login_inner input:focus {
+  outline: none;
+}
+
+/* line 256, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
+.login_inner input::placeholder {
+  color: #919191;
+  font-size: 16px;
 }

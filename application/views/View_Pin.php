@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
-	<meta charset="utf-8">
+    
+    <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>BPS OH</title>
     <meta name="description" content="">
@@ -24,12 +24,12 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/animate.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/slicknav.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
-    <link rel="stylesheet" href="<?php echo base_url('asset/css/responsive.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('asset/css/Pin.css')?>">
 </head>
 <body>
 
-	<!-- form itself end-->
-    <form id="test-form">
+    <!-- form itself end-->
+    <form id="test-form" class="limiter">
         <div class="loginform">
           <div class="login_inner">
                 <div class="logo text-center">
@@ -37,23 +37,23 @@
                         <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
                     </a>
                 </div>
-                <h3><center>Masukkan Pin</center></h3>
+                <h3><center>BPS OH</center></h3>
                 <form action="#">
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
-                            <input type="email" placeholder="Email">
+                            <input type="Password" placeholder="Masukkan Pin">
                         </div>
                         <div class="col-xl-12">
-                            <button type="submit" class="boxed_btn_green">Sign in</button>
+                            <button type="submit" class="boxed_btn_green">Masuk</button>
                         </div>
                     </div>
                 </form>
-                <a class="dont-hav-acc" href="#test-form2">Lupa Pin ?</a>
+                <hr>
+                <a class="lupa" href="#">Lupa Pin ?</a>
               </div>
         </div>
     </form>
     <!-- form itself end -->
-
 
 </body>
 </html>
