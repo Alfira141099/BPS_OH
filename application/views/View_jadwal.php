@@ -34,7 +34,7 @@
 
     <!-- header-start -->
     <header>
-        <div class="header-area " id="navigasi">
+        <div class="header-area" id="navigasi">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center no-gutters">
@@ -126,43 +126,22 @@
                 <table id= "example1" class="table table-bordered table-stripad">
                     <thead>
                         <tr>
-                            <th class="priority-1" width="15%">No</th>
-                            <th class="priority-2" width="15%">Tanggal</th>
-                            <th class="priority-3" width="15%">Keterangan</th>
+                            <th width="1%">No</th>
+                            <th width="15%">Tanggal</th>
+                            <th width="15%">Sesi</th>
+                            <th width="15%">Keterangan</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="priority-1"></td>
-                            <td class="priority-2"></td>
-                            <td class="priority-3"></td>
+                        <?php $no = 1;
+                        foreach ($jadwal as $baris) {
+                        ?>
+                        <tr><td><?php echo $no++;?></td>
+                            <td><?php echo $baris->Tanggal; ?></td>
+                            <td><?php echo $baris->Sesi; ?></td>
+                            <td><?php echo $baris->Keterangan; ?></td>
                         </tr>
-                        <tr>
-                            <td class="priority-1"></td>
-                            <td class="priority-2"></td>
-                            <td class="priority-3"></td>
-                        </tr>
-                        <tr>
-                            <td class="priority-1"></td>
-                            <td class="priority-2"></td>
-                            <td class="priority-3"></td>
-                        </tr>
-                        <tr>
-                            <td class="priority-1"></td>
-                            <td class="priority-2"></td>
-                            <td class="priority-3"></td>
-                        </tr>
-                        <tr>
-                            <td class="priority-1"></td>
-                            <td class="priority-2"></td>
-                            <td class="priority-3"></td>
-                        </tr>
-                        <tr>
-                            <td class="priority-1"></td>
-                            <td class="priority-2"></td>
-                            <td class="priority-3"></td>
-                        </tr>
-                        </thead>
+                        <?php } ?>
                     <tbody>
                     </tbody>
                 </table>
