@@ -65,7 +65,8 @@
 
 <section class="ftco-section contact-section">
 
-        
+        <div class="prising_area">
+        <div class="container">
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
             
