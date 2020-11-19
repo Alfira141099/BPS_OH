@@ -73,11 +73,15 @@
             <form action="" id="form-input" method="POST">
               <div class="form-group">
                 <label for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="nama" required>
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="" required>
               </div>
               <div class="form-group">
                 <label for="nama">NIP</label>
-                        <input type="text" class="form-control" name="nip" id="nip" placeholder="NIP" required>
+                        <input type="text" class="form-control" name="nip" id="nip" placeholder="" required>
+              </div>
+              <div class="form-group">
+                <label for="nama">Seksi</label>
+                        <input type="text" class="form-control" name="seksi" id="" placeholder="" required>
               </div>
               <div class="form-group">
                 <label for="tempat">Tanggal</label>
@@ -87,8 +91,8 @@
               </div>
               
               <div class="form-group">
-                <label for="nama">Keterangan</label>
-                        <input type="text" class="form-control" name="keterangan" id="keterangan" placeholder="Keterangan" required>
+                <label for="nama">Kegiatan</label>
+                        <input type="text" class="form-control" name="kegiatan" id="" placeholder="" required>
               </div>
               <center>
               <div class="form-group">
