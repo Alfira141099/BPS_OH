@@ -65,7 +65,8 @@
 
 <section class="ftco-section contact-section">
 
-        
+        <div class="prising_area">
+        <div class="container">
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
             
@@ -73,11 +74,15 @@
             <form action="" id="form-input" method="POST">
               <div class="form-group">
                 <label for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="nama" required>
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="" required>
               </div>
               <div class="form-group">
                 <label for="nama">NIP</label>
-                        <input type="text" class="form-control" name="nip" id="nip" placeholder="NIP" required>
+                        <input type="text" class="form-control" name="nip" id="nip" placeholder="" required>
+              </div>
+              <div class="form-group">
+                <label for="nama">Seksi</label>
+                        <input type="text" class="form-control" name="seksi" id="" placeholder="" required>
               </div>
               <div class="form-group">
                 <label for="tempat">Tanggal</label>
@@ -87,8 +92,8 @@
               </div>
               
               <div class="form-group">
-                <label for="nama">Keterangan</label>
-                        <input type="text" class="form-control" name="keterangan" id="keterangan" placeholder="Keterangan" required>
+                <label for="nama">Kegiatan</label>
+                        <input type="text" class="form-control" name="kegiatan" id="" placeholder="" required>
               </div>
               <center>
               <div class="form-group">
