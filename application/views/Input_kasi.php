@@ -47,7 +47,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="<?php echo base_url('Bps_oh')?>">home</a></li>
-                                        <li><a href="#test-form" class="login popup-with-form">Login</a></li>
+                                        <li><a href="#test-form" class="login popup-with-form">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -64,8 +64,7 @@
     <!-- header-end -->
 
 <section class="ftco-section contact-section">
-
-    <div class="container">
+        <div class="container">
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
             
@@ -104,7 +103,6 @@
               
             ?>
           </div>
-        </div> 
     </div>
     </section>
 
