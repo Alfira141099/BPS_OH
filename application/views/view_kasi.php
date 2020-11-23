@@ -28,7 +28,6 @@
 </head>
 
 <body>
-
     <!-- header-start -->
     <header>
         <div class="header-area" id="navigasi">
@@ -52,6 +51,7 @@
                                 </nav>
                             </div>
                         </div>
+                
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
@@ -83,6 +83,7 @@
                         <th>Tanggal</th>
                         <th>Seksi</th>
                         <th>Keterangan</th>
+                        <th style="text-align: center;">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -95,6 +96,8 @@
                             <td><?= $Jadwal['Tanggal'] ?></td>
                             <td><?= $Jadwal['Seksi'] ?></td>
                             <td><?= $Jadwal['Keterangan'] ?></td>
+                            <td style="text-align: center;"><a href="<?php echo base_url(); ?>ctrl/fromEdit/<?php echo $hsl->id_barang; ?>" class="btn btn-danger">Hapus</a>
+                            <a href="<?php echo base_url(); ?>ctrl/hapus/<?php echo $hsl->id_barang; ?>" class="btn btn-primary">Ubah</a>
                         </td>
                         </tr>
                     <?php
