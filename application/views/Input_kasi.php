@@ -80,12 +80,17 @@
               </div>
               <div class="form-group">
                 <label for="nama">Seksi</label>
-                        <input type="text" class="form-control" name="seksi" id="" placeholder="" required>
+                        <select name="seksi" class="form-control">
+                <?php foreach ($dataseksi as $key): ?>
+                        <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
+                <?php endforeach ?>
+                    </select>
+
               </div>
               <div class="form-group">
                 <label for="tempat">Tanggal</label>
                         <div class="input-group">
-                            <input id="tanggal" type="date" min="<?= date('Y-m-d'); ?>" max="" class="form-control" placeholder="tanggal" name="Tanggal" required>
+                            <input id="tanggal" type="date" min="<?= date(''); ?>" max="" class="form-control" placeholder="tanggal" name="Tanggal" required>
               </div>
               </div>
               
