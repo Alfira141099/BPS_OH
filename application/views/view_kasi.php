@@ -28,6 +28,7 @@
 </head>
 
 <body>
+
     <!-- header-start -->
     <header>
         <div class="header-area" id="navigasi">
@@ -51,7 +52,6 @@
                                 </nav>
                             </div>
                         </div>
-                
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
                         </div>
@@ -83,22 +83,21 @@
                         <th>Tanggal</th>
                         <th>Seksi</th>
                         <th>Keterangan</th>
-                        <th style="text-align: center;">Action</th>
+                        <th colspan="2">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $no = 1;
-                    foreach ($Jadwal as $Jadwal) :
+                    foreach ($Jadwal as $Jdl) :
                         ?>
                         <tr>
                             <td style="text-align: center;"><?= $no++; ?></td>
-                            <td><?= $Jadwal['Tanggal'] ?></td>
-                            <td><?= $Jadwal['Seksi'] ?></td>
-                            <td><?= $Jadwal['Keterangan'] ?></td>
-                            <td style="text-align: center;"><a href="<?php echo base_url(); ?>ctrl/fromEdit/<?php echo $hsl->id_barang; ?>" class="btn btn-danger">Hapus</a>
-                            <a href="<?php echo base_url(); ?>ctrl/hapus/<?php echo $hsl->id_barang; ?>" class="btn btn-primary">Ubah</a>
-                        </td>
+                            <td><?= $Jdl['Tanggal'] ?></td>
+                            <td><?= $Jdl['Seksi'] ?></td>
+                            <td><?= $Jdl['Keterangan'] ?></td>
+                            <td><?php echo base_url('Data_kasi/hapus/'.$Jdl->id, '<div class ="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                            <td><div class ="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div></td>
                         </tr>
                     <?php
                     endforeach;

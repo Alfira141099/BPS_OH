@@ -1,6 +1,9 @@
-<?php
+<?php 
+ 
+ 
 class Data_kasi extends CI_Controller{
-	public function __construct()
+ 
+    public function __construct()
     {
         parent::__construct();
         $this->load->model('Model_kasi');
@@ -9,33 +12,35 @@ class Data_kasi extends CI_Controller{
     public function index()
     {
         $data['Jadwal'] = $this->Model_kasi->getAllJadwal();
-        $this->load->view('View_Kasi', $data);
+        $this->load->view('view_kasi', $data);
     }
-    //public function tambahJadwal(){
-        //$Nama = $this->input->post('Nama');
-        //$NIP = $this->input->post('NIP');
-        //$Tanggal = $this->input->post('Tanggal');
-        //$Seksi = $this->input->post('Seksi');
-        //$Keterangan = $this->input->post('Keterangan');
+    public function update(){
+        $id=$this->input->post('id');
+        $Nama = $this->input->post('Nama');
+        $NIP = $this->input->post('NIP');
+        $Tanggal = $this->input->post('Tanggal');
+        $Keterangan = $this->input->post('Keterangan');
+        $Seksi = $this->input->post('Seksi');
 
-        //$data = array(
-            //'Nama' => $Nama,
-            //'NIP' => $NIP,
-            //'Tanggal' => $Tanggal,
-            //'Seksi' => $Seksi,
-            //'Keterangan' => $Keterangan,
-        //);
-        //$this->Model_kasi->input('barang', $data);
-        //$this->index();
-    //}
-    public function formEDIT($id_barang){
-        $data['data'] = $this->Model_kasi->barangById($id_barang);
-        $this->load->view('formEdit', $data);
+        $data = array(
+            'Nama' => $Nama,
+            'NIP' => $NIP,
+            'Tanggal' => $Tanggal,
+            'Keterangan' => $Keterangan,
+            'Seksi' => $Seksi
+        );
+
+        $where = array(
+            'id' => $id
+        );
+
+        $this->Model_kasi->update_data($where, $data, 'Jadwal');
+        redirect('Data_Kasi');
     }
     public function hapus($id){
-        $this->Model_kasi->hapus($id);
-        $this->index();
+        $where = array('id'=>$id);
+        $this->Model_kasi->hapus_data($where, 'Jadwal');
+        redirect('Data_kasi/index');
     }
 
 }
-?>

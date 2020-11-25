@@ -95,7 +95,6 @@
                             <td><?= $Jadwal['Tanggal'] ?></td>
                             <td><?= $Jadwal['Seksi'] ?></td>
                             <td><?= $Jadwal['Keterangan'] ?></td>
-                        </td>
                         </tr>
                     <?php
                     endforeach;
