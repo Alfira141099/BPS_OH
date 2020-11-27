@@ -17,14 +17,14 @@ class Kasi extends CI_Controller {
 
 	Public function tambah_aksi(){
 		$nama		= $this->input->post('nama');
-		$NIP		= $this->input->post('nip');
+		$NIP		= $this->input->post('NIP');
 		$seksi		= $this->input->post('seksi');
 		$tanggal	= $this->input->post('tanggal');
 		$kegiatan	= $this->input->post('kegiatan');
 
 		$data = array(
 			'nama'		=> $nama,
-			'NIP'		=> $nip,
+			'NIP'		=> $NIP,
 			'seksi'		=> $seksi,
 			'tanggal'	=> $tanggal,
 			'kegiatan'	=> $kegiatan,

@@ -69,7 +69,7 @@
           <div class="col-md-4 mb-md-1">
             
             <h2 class="text-center">Penjadwalan OH<br> </h2>
-            <form action="" id="form-input" method="POST">
+            <form action="<?php echo base_url().'Kasi/tambah_aksi';?>" id="form-input" method="POST">
               <div class="form-group">
                 <label for="nama">Nama</label>
                         <input type="text" class="form-control" name="nama" id="nama" placeholder="" required>
