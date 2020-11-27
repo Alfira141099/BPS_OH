@@ -69,7 +69,7 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            JADWAL PERJALAN DINAS 
+                            JADWAL PERJALANAN DINAS 
                         </h3>
                         <h3>
                         BPS KAB. PROBOLINGGO
@@ -96,9 +96,9 @@
                         ?>
                         <tr>
                             <td style="text-align: center;"><?php echo $no++ ?></td>
-                            <td><?php echo $Jdl->Tanggal ?></td>
-                            <td><?php echo $Jdl->Seksi ?></td>
-                            <td><?php echo $Jdl->Kegiatan ?></td>
+                            <td><?php echo $Jdl->TANGGAL ?></td>
+                            <td><?php echo $Jdl->SEKSI ?></td>
+                            <td><?php echo $Jdl->KEGIATAN ?></td>
                             <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('Data_kasi/hapus/' .$Jdl->id, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
                             <td><?php echo anchor('Data_kasi/edit/' .$Jdl->id, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
                         </tr>

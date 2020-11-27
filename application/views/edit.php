@@ -74,7 +74,7 @@
                         <div class="form-group">
                             <label>Nama</label>
                             <input type="hidden" name="id" class="form-control" value="<?php echo $Jdl->id ?>">
-                            <input type="text" name="Nama" class="form-control" value="<?php echo $Jdl->Nama ?>">
+                            <input type="text" name="Nama" class="form-control" value="<?php echo $Jdl->NAMA ?>">
                         </div>
                         <div class="form-group">
                             <label>NIP</label>
@@ -82,15 +82,15 @@
                         </div>
                         <div class="form-group">
                             <label>Tanggal</label>
-                            <input type="text" name="Tanggal" class="form-control" value="<?php echo $Jdl->Tanggal ?>">
+                            <input type="text" name="Tanggal" class="form-control" value="<?php echo $Jdl->TANGGAL ?>">
                         </div>
                         <div class="form-group">
                             <label>Kegiatan</label>
-                            <input type="text" name="Kegiatan" class="form-control" value="<?php echo $Jdl->Kegiatan ?>">
+                            <input type="text" name="Kegiatan" class="form-control" value="<?php echo $Jdl->KEGIATAN ?>">
                         </div>
                         <div class="form-group">
                             <label>Seksi</label>
-                            <input type="text" name="Seksi" class="form-control" value="<?php echo $Jdl->Seksi ?>">
+                            <input type="text" name="Seksi" class="form-control" value="<?php echo $Jdl->SEKSI ?>">
                         </div>
                         <button type="reset" class= "btn btn-danger">Reset</button>
                         <button type="submit" class= "btn btn-primary">Simpan</button>

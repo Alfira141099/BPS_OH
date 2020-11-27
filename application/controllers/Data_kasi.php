@@ -9,18 +9,18 @@ class Data_kasi extends CI_Controller{
     }
     public function update(){
         $id=$this->input->post('id');
-        $Nama = $this->input->post('Nama');
+        $NAMA = $this->input->post('Nama');
         $NIP = $this->input->post('NIP');
-        $Tanggal = $this->input->post('Tanggal');
-        $Kegiatan = $this->input->post('Kegiatan');
-        $Seksi = $this->input->post('Seksi');
+        $TANGGAL = $this->input->post('Tanggal');
+        $KEGIATAN = $this->input->post('Kegiatan');
+        $SEKSI = $this->input->post('Seksi');
 
         $data = array(
-            'Nama' => $Nama,
+            'Nama' => $NAMA,
             'NIP' => $NIP,
-            'Tanggal' => $Tanggal,
-            'Kegiatan' => $Kegiatan,
-            'Seksi' => $Seksi
+            'Tanggal' => $TANGGAL,
+            'Kegiatan' => $KEGIATAN,
+            'Seksi' => $SEKSI
         );
 
         $where = array(
