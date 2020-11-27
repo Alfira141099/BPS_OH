@@ -17,7 +17,10 @@ class Input_jadwal extends CI_Model{
 		
 	}
 
-	function inputseksi($where, $table){
-		return $this->db->get_where($table,$where);
+	function inputseksi($data, $table){
+		$query = $this->db->insert($table, $data);
+		return $query;
 	}
+
+
 }

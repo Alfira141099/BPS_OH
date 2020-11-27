@@ -16,22 +16,27 @@ class Kasi extends CI_Controller {
 	}
 
 	Public function tambah_aksi(){
-		$nama		= $this->input->post('nama');
-		$NIP		= $this->input->post('NIP');
-		$seksi		= $this->input->post('seksi');
-		$tanggal	= $this->input->post('tanggal');
-		$kegiatan	= $this->input->post('kegiatan');
+		$id         = $this->input->post('id');
+		$NAMA		= $this->input->post('nama');
+		$NIP		= $this->input->post('nip');
+		$SEKSI		= $this->input->post('seksi');
+		$TANGGAL	= $this->input->post('tanggal');
+		$KEGIATAN	= $this->input->post('kegiatan');
 
 		$data = array(
-			'nama'		=> $nama,
-			'NIP'		=> $NIP,
-			'seksi'		=> $seksi,
-			'tanggal'	=> $tanggal,
-			'kegiatan'	=> $kegiatan,
+			'nama'		=> $NAMA,
+			'nip'		=> $NIP,
+			'seksi'		=> $SEKSI,
+			'tanggal'	=> $TANGGAL,
+			'kegiatan'	=> $KEGIATAN
 		);
 
+		$where = array(
+            'id' => $id
+        );
+
 		$this->Input_jadwal->inputseksi($data, 'jadwal');
-		redirect('Kasi/Input_kasi');
+		redirect('Jadwal');
 	}
 
 	}

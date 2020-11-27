@@ -72,7 +72,8 @@
             <form action="<?php echo base_url().'Kasi/tambah_aksi';?>" id="form-input" method="POST">
               <div class="form-group">
                 <label for="nama">Nama</label>
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="" required>
+                        <input type="hidden" name="id" class="form-control" value="">
+                        <input type="text" class="form-control" name="nama" id="nama" placeholder="" required autofocus="">
               </div>
               <div class="form-group">
                 <label for="nama">NIP</label>
@@ -90,7 +91,7 @@
               <div class="form-group">
                 <label for="tempat">Tanggal</label>
                         <div class="input-group">
-                            <input id="tanggal" type="date" min="<?= date(''); ?>" max="" class="form-control" placeholder="tanggal" name="Tanggal" required>
+                            <input id="tanggal" type="date" min="<?= date(''); ?>" max="" class="form-control" placeholder="tanggal" name="tanggal" required>
               </div>
               </div>
               
