@@ -8,8 +8,8 @@ class Jadwal extends CI_Controller{
 
     public function index()
     {
-        $data['Jadwal'] = $this->Jadwal_model->getAllJadwal();
-        $this->load->view('View_jadwal', $data);
+        $data['Jadwal'] = $this->Jadwal_model->tampil_data()->result();
+        $this->load->view('view_Jadwal', $data);
     }
 
 }

@@ -69,7 +69,10 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            Jadwal OH
+                            MANAJEMEN PERJALAN DINAS 
+                        </h3>
+                        <h3>
+                        BPS KAB. PROBOLINGGO
                         </h3>
                     </div>
                 </div>
@@ -82,26 +85,26 @@
                         <th style="text-align: center;">No</th>
                         <th>Tanggal</th>
                         <th>Seksi</th>
-                        <th>Keterangan</th>
+                        <th>Kegiatan</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
                     $no = 1;
-                    foreach ($Jadwal as $Jadwal) :
+                    foreach ($Jadwal as $Jdl) :
                         ?>
                         <tr>
-                            <td style="text-align: center;"><?= $no++; ?></td>
-                            <td><?= $Jadwal['Tanggal'] ?></td>
-                            <td><?= $Jadwal['Seksi'] ?></td>
-                            <td><?= $Jadwal['Keterangan'] ?></td>
+                            <td style="text-align: center;"><?php echo $no++ ?></td>
+                            <td><?php echo $Jdl->Tanggal ?></td>
+                            <td><?php echo $Jdl->Seksi ?></td>
+                            <td><?php echo $Jdl->Kegiatan ?></td>
                         </tr>
                     <?php
                     endforeach;
                     ?>
                 </tbody>
-            </table> 
-            </div>
+            </table>
+        </div>
         </div>
     </div>
 

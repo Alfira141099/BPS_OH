@@ -1,9 +1,9 @@
 <?php 
  
 class Jadwal_model extends CI_Model{
-
-    public function getAllJadwal()
+    
+    public  function tampil_data()
     {
-        return $this->db->get('Jadwal')->result_array();
+        return  $this->db->get('Jadwal');
     }
 }

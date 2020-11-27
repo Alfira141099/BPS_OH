@@ -69,7 +69,10 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            Jadwal OH
+                            MANAJEMEN PERJALAN DINAS 
+                        </h3>
+                        <h3>
+                        BPS KAB. PROBOLINGGO
                         </h3>
                     </div>
                 </div>
@@ -82,7 +85,7 @@
                         <th style="text-align: center;">No</th>
                         <th>Tanggal</th>
                         <th>Seksi</th>
-                        <th>Keterangan</th>
+                        <th>Kegiatan</th>
                         <th colspan="2">Aksi</th>
                     </tr>
                 </thead>
@@ -92,19 +95,19 @@
                     foreach ($Jadwal as $Jdl) :
                         ?>
                         <tr>
-                            <td style="text-align: center;"><?= $no++; ?></td>
-                            <td><?= $Jdl['Tanggal'] ?></td>
-                            <td><?= $Jdl['Seksi'] ?></td>
-                            <td><?= $Jdl['Keterangan'] ?></td>
-                            <td><?php echo base_url('Data_kasi/hapus/'.$Jdl->id, '<div class ="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
-                            <td><div class ="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div></td>
+                            <td style="text-align: center;"><?php echo $no++ ?></td>
+                            <td><?php echo $Jdl->Tanggal ?></td>
+                            <td><?php echo $Jdl->Seksi ?></td>
+                            <td><?php echo $Jdl->Kegiatan ?></td>
+                            <td onclick="javascript: return confirm('Anda yakin hapus?')"><?php echo anchor('Data_kasi/hapus/' .$Jdl->id, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?></td>
+                            <td><?php echo anchor('Data_kasi/edit/' .$Jdl->id, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?></td>
                         </tr>
                     <?php
                     endforeach;
                     ?>
                 </tbody>
-            </table> 
-            </div>
+            </table>
+        </div>
         </div>
     </div>
 
