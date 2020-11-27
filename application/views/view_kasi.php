@@ -69,7 +69,7 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            MANAJEMEN PERJALAN DINAS 
+                            JADWAL PERJALAN DINAS 
                         </h3>
                         <h3>
                         BPS KAB. PROBOLINGGO

@@ -15,7 +15,7 @@ class Model_kasi extends CI_Model{
     }
     public function update_data($where, $data, $table){
         $this->db->where($where);
-        $this->db->delete($table, $data);
+        $this->db->update($table, $data);
      }
 
 }
