@@ -7,24 +7,27 @@ class Kasi extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Input_jadwal');
+	//	$this->load->model('Jadwal_model');
+		$this->load->model('Model_pegawai');
 	}
 
 	public function index()
 	{
+		$data['Pegawai'] = $this->Model_pegawai->get()->result();
 		$data['dataseksi'] = $this->Input_jadwal->getjadwal();
 		$this->load->view('input_kasi',$data);
 	}
 
 	Public function tambah_aksi(){
 		$id         = $this->input->post('id');
-		$NAMA		= $this->input->post('nama');
+	//	$NAMA		= $this->input->post('nama');
 		$NIP		= $this->input->post('nip');
 		$SEKSI		= $this->input->post('seksi');
 		$TANGGAL	= $this->input->post('tanggal');
 		$KEGIATAN	= $this->input->post('kegiatan');
 
 		$data = array(
-			'nama'		=> $NAMA,
+		//			'nama'		=> $NAMA,
 			'nip'		=> $NIP,
 			'seksi'		=> $SEKSI,
 			'tanggal'	=> $TANGGAL,
@@ -34,9 +37,18 @@ class Kasi extends CI_Controller {
 		$where = array(
             'id' => $id
         );
-
 		$this->Input_jadwal->inputseksi($data, 'jadwal');
 		redirect('Jadwal');
 	}
-
+	
+	public function getDateAjax(){
+		$nip = $this->input->post('nip');
+		$date = $this->Jadwal_model->get_where(['NIP' => $nip])->result();
+		$datedisable = [];
+		foreach($date as $a){
+			array_push($datedisable, date('d-m-Y', strtotime($a->TANGGAL)));
+		}
+		echo json_encode($datedisable);
 	}
+
+}

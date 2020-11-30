@@ -69,33 +69,35 @@
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
           <h2 class="text-center"> Edit Penjadwalan OH<br> </h2>
-                    <?php foreach($Jadwal as $Jdl){ ?>
                     <form action="<?php echo base_url().'Data_kasi/update'; ?>"method="post">
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="hidden" name="id" class="form-control" value="<?php echo $Jdl->id ?>">
-                            <input type="text" name="Nama" class="form-control" value="<?php echo $Jdl->NAMA ?>">
+                            <input type="hidden" name="id" class="form-control" value="<?php echo $Jadwal->id ?>">
+                            <input type="text" disabled name="Nama" class="form-control" value="<?php echo $Jadwal->NAMA ?>">
                         </div>
                         <div class="form-group">
                             <label>NIP</label>
-                            <input type="text" name="NIP" class="form-control" value="<?php echo $Jdl->NIP ?>">
+                            <input type="text" disabled name="NIP" class="form-control" value="<?php echo $Jadwal->NIP ?>">
                         </div>
                         <div class="form-group">
                             <label>Tanggal</label>
-                            <input type="text" name="Tanggal" class="form-control" value="<?php echo $Jdl->TANGGAL ?>">
+                            <input type="date" name="Tanggal" class="form-control" value="<?php echo $Jadwal->TANGGAL ?>">
                         </div>
                         <div class="form-group">
                             <label>Kegiatan</label>
-                            <input type="text" name="Kegiatan" class="form-control" value="<?php echo $Jdl->KEGIATAN ?>">
+                            <input type="text" name="Kegiatan" class="form-control" value="<?php echo $Jadwal->KEGIATAN ?>">
                         </div>
                         <div class="form-group">
                             <label>Seksi</label>
-                            <input type="text" name="Seksi" class="form-control" value="<?php echo $Jdl->SEKSI ?>">
+                            <select name="Seksi" class="form-control">
+                                <?php foreach ($Seksi as $key): ?>
+                                        <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
+                                <?php endforeach ?>
+                    </select>
                         </div>
                         <button type="reset" class= "btn btn-danger">Reset</button>
                         <button type="submit" class= "btn btn-primary">Simpan</button>
                     </form>
-                    <?php }?>
                 </section>
             </div>
             </div>

@@ -25,6 +25,8 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/slicknav.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/responsive.css')?>">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
 </head>
 
 <body>
@@ -72,12 +74,11 @@
             <form action="<?php echo base_url().'Kasi/tambah_aksi';?>" id="form-input" method="POST">
               <div class="form-group">
                 <label for="nama">Nama</label>
-                        <input type="hidden" name="id" class="form-control" value="">
-                        <input type="text" class="form-control" name="nama" id="nama" placeholder="" required autofocus="">
-              </div>
-              <div class="form-group">
-                <label for="nama">NIP</label>
-                        <input type="text" class="form-control" name="nip" id="nip" placeholder="" required>
+                        <select name="NIP" id="nama" class="pegawai form-control">
+                <?php foreach ($Pegawai as $pgi): ?>
+                        <option value="<?php echo $pgi->NIP ?>"><?php echo $pgi->NAMA?></option>
+                <?php endforeach ?>
+                    </select>
               </div>
               <div class="form-group">
                 <label for="nama">Seksi</label>
@@ -91,7 +92,7 @@
               <div class="form-group">
                 <label for="tempat">Tanggal</label>
                         <div class="input-group">
-                            <input id="tanggal" type="date" min="<?= date(''); ?>" max="" class="form-control" placeholder="tanggal" name="tanggal" required>
+                            <input id="tanggal" data-date-format="mm/dd/yyyy" type="date" class="form-control datepicker" placeholder="tanggal" name="tanggal" required>
               </div>
               </div>
               
@@ -258,6 +259,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script src="<?php echo base_url('asset/js/jquery.magnific-popup.min.js')?>"></script>
     <script src="<?php echo base_url('asset/js/plugins.js')?>"></script>
     <script src="<?php echo base_url('asset/js/gijgo.min.js')?>"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <!--contact js-->
     <script src="<?php echo base_url('asset/js/contact.js')?>"></script>
@@ -268,7 +271,38 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script src="<?php echo base_url('asset/js/main.js')?>"></script>
 
     <script>
+        $(document).ready(function() {
+            $('.pegawai').select2();
+
+            $('.pegawai').change(function(){
+                let nip = this.value;
+                $.ajax({
+                    url: '<?= base_url() ?>/kasi/getDateAjax',
+                    method: 'post',
+                    data: {nip:nip},
+                    success: 
+                    function(result){
+                        $('.datepicker').datepicker({
+                            format: 'mm/dd/yyyy',
+                            beforeShowDay: function(date){
+                                dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+                                if(result.indexOf(dmy) != -1){
+                                    return false;
+                                }
+                                else{
+                                    return true;
+                                }
+                            }
+                        });
+                    }
+                });
+            });
+
+        });
+    </script>
+    <script>
         document.getElementById('find').style.background = '#26C867';
+        // In your Javascript (external .js resource or <script> tag)
     </script>
 </body>
 
