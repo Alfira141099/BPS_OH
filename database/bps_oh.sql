@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 01:36 AM
+-- Generation Time: Nov 30, 2020 at 09:31 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -36,13 +36,6 @@ CREATE TABLE `jadwal` (
   `KEGIATAN` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `jadwal`
---
-
-INSERT INTO `jadwal` (`id`, `NIP`, `TANGGAL`, `SEKSI`, `KEGIATAN`) VALUES
-(8, '123', '2020-12-02', 'TU', 'turun lapang');
-
 -- --------------------------------------------------------
 
 --
@@ -65,16 +58,36 @@ CREATE TABLE `kasi` (
 
 CREATE TABLE `pegawai` (
   `NAMA` varchar(255) NOT NULL,
-  `NIP` varchar(18) NOT NULL
+  `NIP` varchar(18) NOT NULL,
+  `Jabatan` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `pegawai`
 --
 
-INSERT INTO `pegawai` (`NAMA`, `NIP`) VALUES
-('Nofita Okta Sasmita', '123'),
-('Alfira Rosalina', '321');
+INSERT INTO `pegawai` (`NAMA`, `NIP`, `Jabatan`) VALUES
+('Bagus Sunggono, SE, M.M', '196307231990031002', 'Kepala BPS Kabupaten/Kota'),
+('Suparto', '196404222007011004', 'Staf Subbagian Tata Usaha'),
+('Oni Sanimanto, SE', '197110131998031001', 'Kepala Subbagian Tata Usaha'),
+('Syamsuddin', '197211111994011001', 'Statistisi Penyelia KSK'),
+('Agus Tonowijaya', '197308112009011001', 'Statistisi Pelaksana KSK'),
+('Endro Tri Sustono, SE', '197308271994011001', 'Kepala Seksi Statistik Distribusi'),
+('Budi Septiyono, S.Si', '197409271995121001', 'Kepala Seksi Statistik Produksi\r\n'),
+('Roni Hartono, SST', '197705091999121001', 'Kepala Seksi Neraca Wilayah dan Analisis Stat'),
+('Yenita Mirawanti, SST.,M.Si', '197806032000122002', 'Kepala Seksi Statistik Sosial'),
+('Nur Rachmad Safari', '198101012007011002', 'Statistisi Pelaksanaan Lanjutan KSK'),
+('Bambang Herwanto', '198204062006041018', 'Statistisi Pelaksana KSK'),
+('Endro Dwi Budi Prasetyo', '198205262009011008', 'Statistisi Pelaksana Lanjutan KSK'),
+('Heru Hardanto, S.Si, M.E', '198206022009021007', 'Staf Seksi Statistik Produksi'),
+('Rony Hadiyanto, SST', '198304062008011008', 'Kepala Seksi Integrasi Pengolahan dan Diseminasi Stat'),
+('Sri Yogorini, SST', '198412312008012007', 'Staf Seksi Statistik Distribusi'),
+('Zaenal Arifin, S.Si', '198503252012121001', 'Staf Seksi Neraca Wilayah dan Analisis Stat\r\n'),
+('Rahmadanie Sapta Irevanie, SST, M.Si', '198605102009022003', 'Staf Seksi Statistik Produksi'),
+('Dicky Dita Firmansyah, S.ST, M.Ec.Dev', '198709122009121002', 'Staf Seksi Integrasi Pengolahan dan Diseminasi Stat'),
+('Atmasari, S.Si.', '198802202011012002', 'Statistisi Pertama KSK'),
+('Bambang Winarno, A.Md', '198909252012121003', 'Bendahara Pengeluaran Daerah Subbagian Tata Usaha'),
+('Oktar Sander, SST', '199110212014121001', 'Staf Seksi Statistik Sosial');
 
 -- --------------------------------------------------------
 
