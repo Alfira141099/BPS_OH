@@ -20,15 +20,15 @@ class Kasi extends CI_Controller {
 
 	Public function tambah_aksi(){
 		$id         = $this->input->post('id');
-	//	$NAMA		= $this->input->post('nama');
-		$NIP		= $this->input->post('nip');
+		$NAMA		= $this->input->post('NIP');
+	//	$NIP		= $this->input->post('nip');
 		$SEKSI		= $this->input->post('seksi');
 		$TANGGAL	= $this->input->post('tanggal');
 		$KEGIATAN	= $this->input->post('kegiatan');
 
 		$data = array(
-		//			'nama'		=> $NAMA,
-			'nip'		=> $NIP,
+	//		'nama'		=> $NAMA,
+			'NIP'		=> $NAMA,
 			'seksi'		=> $SEKSI,
 			'tanggal'	=> $TANGGAL,
 			'kegiatan'	=> $KEGIATAN

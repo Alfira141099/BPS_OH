@@ -126,19 +126,29 @@
             <h4>Integrasi Pengolahan dan Diseminasi Statistik</h4>
             </div>
                 </div>
-            <div class="row">
-                <div class="col-xl-6 col-md-6 col-lg-6">
+
+            <section class="ftco-section">
+            <div class="container">
+
+                <?php 
+          $numcol = 4;
+          $countrow = 0;
+          $colwidth = 12 / $numcol;
+        ?>
+        <div class="row">
+
+                <div class="col-xl-3 col-md-3 col-lg-3">
                     <div class="single_prising">
                         <div class="prising_icon blue">
                             <i class="flaticon-servers"></i>
                         </div>
-                        <h3>Share Hosting</h3>
+                        <h3>Alfira Rosalina</h3>
                         <p class="prising_text">Easy drag and drop fully customizable mobile friendly</p>
                         <p class="prise">Start from <span>$2.5/m</span></p>
-                        <a href="#" class="boxed_btn_green2">Start Now</a>
+                        <a href="#" class="boxed_btn_green2">Lihat Jadwal</a>
                     </div>
                 </div>
-                <div class="col-xl-6 col-md-6 col-lg-6">
+                <div class="col-xl-3 col-md-3 col-lg-3">
                     <div class="single_prising">
                         <div class="prising_icon lite_blue">
                             <i class="flaticon-hosting"></i>
@@ -146,21 +156,21 @@
                         <h3>VPS Hosting</h3>
                         <p class="prising_text">Easy drag and drop fully customizable mobile friendly</p>
                         <p class="prise">Start from <span>$2.5/m</span></p>
-                        <a href="#" class="boxed_btn_green2">Start Now</a>
+                        <a href="#" class="boxed_btn_green2">Lihat Jadwal</a>
                     </div>
                 </div>
-                <div class="col-xl-6 col-md-6 col-lg-6">
+                <div class="col-xl-3 col-md-3 col-lg-3">
                     <div class="single_prising">
                         <div class="prising_icon pink">
                             <i class="flaticon-wordpress"></i>
                         </div>
-                        <h3>Wordpress Hosting</h3>
+                        <h3>Wordpress </h3>
                         <p class="prising_text">Easy drag and drop fully customizable mobile friendly</p>
                         <p class="prise">Start from <span>$2.5/m</span></p>
-                        <a href="#" class="boxed_btn_green2">Start Now</a>
+                        <a href="#" class="boxed_btn_green2">Lihat Jadwal</a>
                     </div>
                 </div> 
-                <div class="col-xl-6 col-md-6 col-lg-6">
+                <div class="col-xl-3 col-md-3 col-lg-3">
                     <div class="single_prising">
                         <div class="prising_icon yellow">
                             <i class="flaticon-servers-1"></i>
@@ -168,12 +178,22 @@
                         <h3>Dedicated Hosting</h3>
                         <p class="prising_text">Easy drag and drop fully customizable mobile friendly</p>
                         <p class="prise">Start from <span>$2.5/m</span></p>
-                        <a href="#" class="boxed_btn_green2">Start Now</a>
+                        <a href="#" class="boxed_btn_green2">Lihat Jadwal</a>
                     </div>
-                </div> -->
+                </div> 
             </div>
         </div>
+
+        <?php 
+            $countrow++;
+            if ($countrow % $numcol == 0){
+              echo '</div><div class="row">';
+            }
+          ?>
+
     </div>
+
+</section>
     <!-- prising_area_end -->
 
     <!-- core_features_start -->
@@ -627,7 +647,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/bpskabprobolinggo/">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
