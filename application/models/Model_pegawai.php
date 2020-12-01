@@ -13,4 +13,9 @@ class Model_pegawai extends CI_Model{
 		$query = $this->db->insert($table, $data);
 		return $query;
 	}
+
+	function ambil_data($tabel){
+
+        return $this->db->get($tabel);
+    }
 }
