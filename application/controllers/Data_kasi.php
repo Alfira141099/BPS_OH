@@ -2,6 +2,12 @@
 
 class Data_kasi extends CI_Controller{
 
+    public function __construct(){
+        parent::__construct();
+        //proteksi halaman dengan library my_login
+        $this->my_login->check_login();
+    }
+
     public function index()
     {
         $this->load->model('Model_kasi');

@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
-    <meta charset="utf-8">
+	
+	<meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BPS OH</title>
+    <title><?= $title ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -28,8 +28,8 @@
 </head>
 <body>
 
-    <!-- form itself end-->
-    <form id="test-form" class="limiter">
+	<!-- form itself end-->
+    <form id="test-form" class="limiter" method="post">
         <div class="loginform">
           <div class="login_inner">
                 <div class="logo text-center">
@@ -38,18 +38,41 @@
                     </a>
                 </div>
                 <h3><center>BPS OH</center></h3>
-                <form action="#">
+
+            <?php
+                if($this->session->flashdata('sukses')){
+
+                ?>
+                <small style="margin-top: 5px" class="text-success pl-3"><?php echo $this->session->flashdata('sukses');?></small>
+            <?php }?>
+            <?php
+                if($this->session->flashdata('warning')){
+
+                ?>
+                <small style="margin-top: 5px" class="text-danger pl-3"><?php echo $this->session->flashdata('warning');?></small>
+            <?php }?>
+                <form>
+                    <?php 
+                    //validasi form jika ada error
+                    
+
+                    echo form_open(base_url('Login'));
+                    ?>
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
-                            <input type="Password" placeholder="Masukkan Pin">
+                            <input type="text" placeholder="Username" name="username" value="<?php echo set_value('username')?>">
+                           <div style="margin-top: 5px" class="error"><?php echo form_error('username', '<small class="text-danger pl-3">','</small>');?></div>
+                        </div>
+                        <div class="col-xl-12 col-md-12">
+                            <input type="Password" name="password" placeholder="Masukkan Password" value="<?php echo set_value('password')?>">
+                           <div style="margin-top: 5px" class="error"><?php echo form_error('password', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
                         <div class="col-xl-12">
-                            <button type="submit" class="boxed_btn_green">Masuk</button>
+                            <input type="submit" class="boxed_btn_green" id="tombol" value="Login"></input>
                         </div>
                     </div>
                 </form>
-                <hr>
-                <a class="lupa" href="#">Lupa Pin ?</a>
+                <a class="lupa" href="#">Lupa Password ?</a>
               </div>
         </div>
     </form>
