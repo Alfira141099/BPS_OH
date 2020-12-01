@@ -11,7 +11,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('Home');
+		$data = array('title' => 'Home Penjadwalan Dinas');
+		$this->load->view('Home', $data, FALSE);
 	}
 
 	public function input()

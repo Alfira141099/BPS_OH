@@ -3,12 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Input_pegawai extends CI_Controller {
 
-	public function __construct(){
-		parent::__construct();
-		//proteksi halaman dengan library my_login
-		$this->my_login->check_login();
-	}
-
     function __construct(){
 		parent::__construct();		
 		$this->load->model('Minput_pegawai');

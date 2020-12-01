@@ -4,7 +4,6 @@ class Pegawai extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Model_pegawai');
-        $this->my_login->check_login();
     }
 
     public function index()
