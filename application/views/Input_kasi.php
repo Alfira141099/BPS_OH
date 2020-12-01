@@ -49,7 +49,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="active" href="<?php echo base_url('Home')?>">home</a></li>
-                                        <li><a href="#test-form" class="login popup-with-form">Logout</a></li>
+                                        <li><a href="<?= base_url('Login/logout')?>" class="login popup-with-form">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>
