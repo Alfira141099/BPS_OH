@@ -97,7 +97,7 @@ body{
 
 .login_inner input {
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   color: #000;
   padding: 14px;
   border: 1px solid #ddd;
@@ -105,7 +105,9 @@ body{
   height: 50px;
   padding-left: 30px;
 }
-
+.login_inner .error{
+  text-align: center;
+}
 /* line 253, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_gallery.scss */
 .login_inner input:focus {
   outline: none;

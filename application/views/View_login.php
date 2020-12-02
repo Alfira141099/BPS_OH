@@ -43,29 +43,30 @@
                 if($this->session->flashdata('sukses')){
 
                 ?>
-                <small style="margin-top: 5px" class="text-success pl-3"><?php echo $this->session->flashdata('sukses');?></small>
+                <strong style="margin-top: 5px" class="text-success pl-3"><?php echo $this->session->flashdata('sukses');?></strong>
             <?php }?>
             <?php
                 if($this->session->flashdata('warning')){
 
                 ?>
-                <small style="margin-top: 5px" class="text-danger pl-3"><?php echo $this->session->flashdata('warning');?></small>
+                <strong style="margin-top: 5px" class="text-danger pl-3"><?php echo $this->session->flashdata('warning');?></strong>
             <?php }?>
                 <form>
                     <?php 
                     //validasi form jika ada error
+
                     
 
                     echo form_open(base_url('Login'));
                     ?>
                     <div class="row">
                         <div class="col-xl-12 col-md-12">
+                            <div style="margin-top: 5px" class="error"><?php echo form_error('username', '<strong class="text-danger pl-3">','</strong>');?></div>
                             <input type="text" placeholder="Username" name="username" value="<?php echo set_value('username')?>">
-                           <div style="margin-top: 5px" class="error"><?php echo form_error('username', '<small class="text-danger pl-3">','</small>');?></div>
                         </div>
                         <div class="col-xl-12 col-md-12">
+                             <div style="margin-top: 5px" class="error"><?php echo form_error('password', '<strong class="text-danger pl-3">','</strong>');?></div> 
                             <input type="Password" name="password" placeholder="Masukkan Password" value="<?php echo set_value('password')?>">
-                           <div style="margin-top: 5px" class="error"><?php echo form_error('password', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
                         <div class="col-xl-12">
                             <input type="submit" class="boxed_btn_green" id="tombol" value="Login"></input>

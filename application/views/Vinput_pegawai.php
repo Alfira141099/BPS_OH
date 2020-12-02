@@ -70,17 +70,17 @@
                         <div class="form-group">
                             <label>Nama</label>
                             <input type="text" name="Nama" class="form-control" value="<?php echo set_value('Nama')?>">
-                             <div style="margin-top: 5px" class="error"><?php echo form_error('Nama', '<small class="text-danger pl-3">','</small>');?></div> 
+                             <div class="error"><?php echo form_error('Nama', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
                         <div class="form-group">
                             <label>NIP</label>
                             <input type="text" name="NIP" class="form-control" value="<?php echo set_value('NIP')?>"> 
-                             <div style="margin-top: 5px" class="error"><?php echo form_error('NIP', '<small class="text-danger pl-3">','</small>');?></div> 
+                             <div class="error"><?php echo form_error('NIP', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
                         <div class="form-group">
                             <label>Jabatan</label>
                             <input type="text" name="Jabatan" class="form-control" value="<?php echo set_value('Jabatan')?>">
-                             <div style="margin-top: 5px" class="error"><?php echo form_error('Jabatan', '<small class="text-danger pl-3">','</small>');?></div> 
+                             <div class="error"><?php echo form_error('Jabatan', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
                         <div class="mb-md-5">
                        <center><button type="reset" class= "btn btn-danger">Reset</button>
