@@ -66,21 +66,26 @@
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
           <h2 class="text-center"> INPUT DATA PEGAWAI<br> </h2>
-                    <form action="<?php echo base_url().'Input_pegawai/tambah_aksi'; ?>"method="post">
+                    <form action="<?php echo base_url('Input_pegawai/tambah_aksi'); ?>"method="post">
                         <div class="form-group">
                             <label>Nama</label>
-                            <input type="text" name="Nama" class="form-control">
+                            <input type="text" name="Nama" class="form-control" value="<?php echo set_value('Nama')?>">
+                             <div style="margin-top: 5px" class="error"><?php echo form_error('Nama', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
                         <div class="form-group">
                             <label>NIP</label>
-                            <input type="text" name="NIP" class="form-control">
+                            <input type="text" name="NIP" class="form-control" value="<?php echo set_value('NIP')?>"> 
+                             <div style="margin-top: 5px" class="error"><?php echo form_error('NIP', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
                         <div class="form-group">
                             <label>Jabatan</label>
-                            <input type="text" name="Jabatan" class="form-control">
+                            <input type="text" name="Jabatan" class="form-control" value="<?php echo set_value('Jabatan')?>">
+                             <div style="margin-top: 5px" class="error"><?php echo form_error('Jabatan', '<small class="text-danger pl-3">','</small>');?></div> 
                         </div>
-                        <button type="reset" class= "btn btn-danger">Reset</button>
-                        <button type="submit" class= "btn btn-primary">Simpan</button>
+                        <div class="mb-md-5">
+                       <center><button type="reset" class= "btn btn-danger">Reset</button>
+                        <button type="submit" class= "btn btn-primary">Simpan</button></center> 
+                        </div>
                     </form>
             </div>
             </div>
