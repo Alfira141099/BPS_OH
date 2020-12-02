@@ -24,15 +24,14 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/animate.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/slicknav.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
-    <link rel="stylesheet" href="<?php echo base_url('asset/css/responsive.css')?>">
+    <link rel="stylesheet" href="<?php echo base_url('asset/css/table.css')?>">
 </head>
 
 <body>
 
-
     <!-- header-start -->
     <header>
-        <div class="header-area " id="navigasi">
+        <div class="header-area" id="navigasi">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center no-gutters">
@@ -47,13 +46,11 @@
                             <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="<?php echo base_url('Bps_oh')?>">home</a></li>
-                                        <li><a href="#test-form" class="login popup-with-form">Login</a></li>
+                                        <li><a class="active" href="<?php echo base_url('Home')?>">home</a></li>
+                                        <li><a href="<?= base_url('Login/logout')?>" class="login popup-with-form">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>
-                        </div>
-
                         </div>
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -65,29 +62,6 @@
     </header>
     <!-- header-end -->
 
-    <!-- slider_area_start -->
-    <div class="slider_area" id="slider">
-        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay2">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-xl-9">
-                        <div class="slider_text text-center">
-                            <p>Penjadwalan OH</p>
-                            <h3>BPS Kabupaten Probolinggo</h3>
-                            <div class="find_dowmain">
-                                <form action="#" class="find_dowmain_form">
-                                  <td>  <input type="text" name="nama" id="nama" placeholder="Temukan nama">  </td>
-                                    <button type="submit" id="find">cari</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- slider_area_end -->
-
     <!-- prising_area_start -->
     <div class="prising_area">
         <div class="container">
@@ -95,96 +69,41 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            Staff BPS Kabupaten Probolinggo
+                            DAFTAR PEGAWAI 
+                        </h3>
+                        <h3>
+                        BPS KAB. PROBOLINGGO
                         </h3>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-12">
-                <div class="section_title text-center mb-80">
-            <h4>Integrasi Pengolahan dan Diseminasi Statistik</h4>
+
+        <div class= "box-body">
+        <div class ="card">
+                <tbody>
+                    <?php
+                    foreach ($pegawai as $pgi) :
+                        ?>
+                            <div class="card-header bg-primary">
+                            <td><?php echo $pgi->NAMA ?></td>
+                            <td><?php echo $pgi->NIP ?></td>
+                            <td><?php echo $pgi->Jabatan ?></td>
+                            </div>
+                    <?php
+                    endforeach;
+                    ?>
+                </tbody>
             </div>
-                </div>
-
-            <section class="ftco-section">
-            <div class="container">
-
-        <?php 
-          $numcol = 4;
-          $countrow = 0;
-          $colwidth = 12 / $numcol;
-        ?>
-        <div class="row">
-            <?php foreach ($pegawai as $pgi) { 
-                ?>
-
-                <div class="col-xl-3 col-md-3 col-lg-3">
-                    <div class="single_prising">
-                        <div class="prising_icon blue">
-                            <i class="flaticon-servers"></i>
-                        </div>
-                        <h3><?php echo $pgi->NAMA; ?></h3>
-                        <p class="prising_text"><?php echo $pgi->NIP; ?></p>
-                        <a href="<?php echo base_url();?>bps_oh/Jadwal/<?php echo $pgi->NIP; ?>" class="boxed_btn_green2">Lihat Jadwal</a>
-
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-3 col-lg-3">
-                    <div class="single_prising">
-                        <div class="prising_icon lite_blue">
-                            <i class="flaticon-hosting"></i>
-                        </div>
-                        <h3>VPS Hosting</h3>
-                        <p class="prising_text">Easy drag and drop fully customizable mobile friendly</p>
-                        <p class="prise">Start from <span>$2.5/m</span></p>
-                        <a href="#" class="boxed_btn_green2">Lihat Jadwal</a>
-                    </div>
-                </div>
-                <div class="col-xl-3 col-md-3 col-lg-3">
-                    <div class="single_prising">
-                        <div class="prising_icon pink">
-                            <i class="flaticon-wordpress"></i>
-                        </div>
-                        <h3>Wordpress </h3>
-                        <p class="prising_text">Easy drag and drop fully customizable mobile friendly</p>
-                        <p class="prise">Start from <span>$2.5/m</span></p>
-                        <a href="#" class="boxed_btn_green2">Lihat Jadwal</a>
-                    </div>
-                </div> 
-                <div class="col-xl-3 col-md-3 col-lg-3">
-                    <div class="single_prising">
-                        <div class="prising_icon yellow">
-                            <i class="flaticon-servers-1"></i>
-                        </div>
-                        <h3>Dedicated Hosting</h3>
-                        <p class="prising_text">Easy drag and drop fully customizable mobile friendly</p>
-                        <p class="prise">Start from <span>$2.5/m</span></p>
-                        <a href="#" class="boxed_btn_green2">Lihat Jadwal</a>
-                    </div>
-                </div> 
-            </div>
-        <?php } ?>
-            
         </div>
-
-        <?php 
-            $countrow++;
-            if ($countrow % $numcol == 0){
-              echo '</div><div class="row">';
-            }
-          ?>
-
+        </div>
     </div>
-
-</section>
-    <!-- prising_area_end -->
 
     <!-- footer -->
     <footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-12 col-md-12 col-lg-12">
+                    <div class="col-xl-10 col-md-12 col-lg-10">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
@@ -202,7 +121,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/bpskabprobolinggo/">
+                                        <a href="#">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -217,12 +136,26 @@
                                 service
                             </h3>
                             <ul>
-                                <li><a href="#">Tentang</a></li>
-                                <li><a href="#">Panduan</a></li>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Jadwal</a></li>
+                                <li><a href="#">Daftar Staff</a></li>
                             </ul>
 
                         </div>
                     </div>
+                  <div class="col-xl-2 col-md-6 col-lg-2">
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Navigation
+                            </h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Rooms</a></li>
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                    </div> 
             </div>
         </div>
         <div class="copy-right_text">
@@ -231,10 +164,10 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-                            
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS Kab Probolinggo<i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                       </p>
                     </div>
                 </div>
             </div>
@@ -303,6 +236,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
         </div>
     </form>
     <!-- form itself end -->
+
 
     <!-- JS here -->
     <script src="<?php echo base_url('asset/js/vendor/modernizr-3.5.0.min.js')?>"></script>

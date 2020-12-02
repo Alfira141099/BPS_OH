@@ -14,8 +14,8 @@ class Model_pegawai extends CI_Model{
 		return $query;
 	}
 
-	function ambil_data($tabel){
+	//function ambil_data($tabel){
 
-        return $this->db->get($tabel);
-    }
+        //return $this->db->get($tabel);
+    //}
 }
