@@ -81,7 +81,8 @@
             </div>
 
         <div class= "box-body">
-            <table class="table" id="dataTable">
+            <div class="table-responsive">
+            <table class="table" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th style="text-align: center;">No</th>
@@ -112,6 +113,7 @@
                     ?>
                 </tbody>
             </table>
+        </div>
         </div>
         </div>
     </div>
