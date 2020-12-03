@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/slicknav.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/table.css')?>">
+    <link href="<?php echo base_url('asset/tabel/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
 </head>
 
 <body>
@@ -79,7 +80,7 @@
             </div>
 
         <div class= "box-body">
-            <table class="table">
+            <table class="table" id="dataTable">
                 <thead>
                     <tr>
                         <th style="text-align: center;">No</th>
@@ -262,6 +263,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script src="<?php echo base_url('asset/js/jquery.validate.min.js')?>"></script>
     <script src="<?php echo base_url('asset/js/mail-script.js')?>"></script>
     <script src="<?php echo base_url('asset/js/main.js')?>"></script>
+
+    <!-- Page level plugins -->
+  <script src="<?php echo base_url('asset/tabel/jquery.dataTables.min.js');?>"></script>
+  <script src="<?php echo base_url('asset/tabel/dataTables.bootstrap4.min.js');?>"></script>
+
+  <!-- Page level custom scripts -->
+  <script src="<?php echo base_url('asset/tabel/datatables-demo.js');?>"></script>
 
     <script>
         document.getElementById('find').style.background = '#26C867';
