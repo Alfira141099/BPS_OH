@@ -80,6 +80,7 @@
             </div>
 
         <div class= "box-body">
+             <div class="table-responsive">
             <table class="table" id="dataTable">
                 <thead>
                     <tr>
@@ -105,6 +106,7 @@
                     ?>
                 </tbody>
             </table>
+        </div>
         </div>
         </div>
     </div>
