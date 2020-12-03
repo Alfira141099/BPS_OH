@@ -73,7 +73,7 @@
                             JADWAL PERJALANAN DINAS 
                         </h3>
                         <h3>
-                        BPS KAB. PROBOLINGGO
+                        BPS KABUPATEN PROBOLINGGO
                         </h3>
                     </div>
                 </div>
@@ -91,9 +91,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
+                   <?php
+                   if(is_array($jadwal)){
                     $no = 1;
-                    foreach ($Jadwal as $Jdl) :
+                    foreach ($jadwal as $Jdl) :
                         ?>
                         <tr>
                             <td style="text-align: center;"><?php echo $no++ ?></td>
@@ -101,8 +102,9 @@
                             <td><?php echo $Jdl->SEKSI ?></td>
                             <td><?php echo $Jdl->KEGIATAN ?></td>
                         </tr>
-                    <?php
+                   <?php
                     endforeach;
+                }
                     ?>
                 </tbody>
             </table>

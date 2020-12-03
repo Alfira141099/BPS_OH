@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BPS OH</title>
+    <title>BPS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -120,7 +120,7 @@
             </div>
                     
                 <div class="card-header bg-light">.
-                <h4><td><a href="<?php echo base_url('Bps_oh/detailjadwal/'.$pgi->NIP,''); ?>">
+                <h4><td><a href="<?php echo base_url('Jadwal/index/'.$pgi->NIP,''); ?>">
                     <?php echo $pgi->NAMA ?></a></td></h4>
                 <p class="nip"><td><?php echo $pgi->NIP ?></td></p>
                 <p class="jabatan"><td><?php echo $pgi->Jabatan ?></td></p>

@@ -4,7 +4,7 @@ class Jadwal_model extends CI_Model{
     
     public  function tampil_data()
     {
-        return  $this->db->get('Jadwal');
+        return  $this->db->get('jadwal');
     }
 
   //  public function get_where($where){
@@ -19,7 +19,7 @@ class Jadwal_model extends CI_Model{
 //			return $query;
 //	}
 
-    public function detail_data($NIP = NULL){
+   public function detail_data($NIP = NULL){
       $query = $this->db->get_where('jadwal', array('NIP' => $NIP))->row();
       return $query;
     }

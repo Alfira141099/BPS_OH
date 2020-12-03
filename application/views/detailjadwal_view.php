@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BPS OH</title>
+    <title>BPS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -65,17 +65,47 @@
     </header>
     <!-- header-end -->
 
-<section class="ftco-section contact-section">
+     <!-- prising_area_start -->
+    <div class="prising_area">
         <div class="container">
-        <div class="row block-5 justify-content-center mb-1">
-          <div class="col-md-4 mb-md-1">
-            
-            <h2 class="text-center">Penjadwalan OH<br> </h2>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="section_title text-center mb-100">
+                        <h3>
+                            JADWAL PERJALANAN DINAS 
+                        </h3>
+                        <h3>
+                        BPS KABUPATEN PROBOLINGGO
+                        </h3>
+                    </div>
+                </div>
             </div>
-          
-          </div>
+
+        <div class= "box-body">
+            <table class="table" id="dataTable">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No</th>
+                        <th>Tanggal</th>
+                        <th>Seksi</th>
+                        <th>Kegiatan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                   
+                        <tr>
+                            <td style="text-align: center;"><?php echo $no++ ?></td>
+                            <td><?php echo $jadwal->TANGGAL ?></td>
+                            <td><?php echo $jadwal->SEKSI ?></td>
+                            <td><?php echo $jadwal->KEGIATAN ?></td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        </div>
     </div>
-    </section>
 
     <!-- footer -->
     <footer class="footer">
