@@ -18,4 +18,9 @@ class Model_pegawai extends CI_Model{
 
         //return $this->db->get($tabel);
     //}
+
+     public function detail_data($NIP = NULL){
+      $query = $this->db->get_where('jadwal', array('NIP' => $NIP))->row();
+      return $query;
+    }
 }

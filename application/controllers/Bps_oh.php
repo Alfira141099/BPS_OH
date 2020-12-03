@@ -18,4 +18,14 @@ class Bps_oh extends CI_Controller{
         //redirect('Pegawai/index');
     //}
 
+    //READ JADWAL TIAP-TIAP PEGAWAI 
+	public function detailjadwal($NIP){
+	//	$data->pegawai = $this->Model_pegawai->getdetailjadwal($NIP)->row_array();
+        $this->load->model('Model_pegawai');
+        $detailjadwal = $this->Model_pegawai->detail_data($NIP);
+        $this->load->model('Jadwal_model');
+        $data['jadwal'] = $detailjadwal;
+        $this->load->view('detailjadwal_view',$data);
+	}
+
 }
