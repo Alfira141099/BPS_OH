@@ -118,7 +118,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/bpskabprobolinggo/">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -133,26 +133,14 @@
                                 service
                             </h3>
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="<?php echo base_url('Bps_kasi')?>">Home</a></li>
                                 <li><a href="#">Jadwal</a></li>
                                 <li><a href="#">Daftar Staff</a></li>
                             </ul>
 
                         </div>
                     </div>
-                  <div class="col-xl-2 col-md-6 col-lg-2">
-                        <div class="footer_widget">
-                            <h3 class="footer_title">
-                                Navigation
-                            </h3>
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">Rooms</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">News</a></li>
-                            </ul>
-                        </div>
-                    </div> 
+                  
             </div>
         </div>
         <div class="copy-right_text">

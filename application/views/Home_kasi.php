@@ -174,7 +174,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="https://www.instagram.com/bpskabprobolinggo/">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -189,7 +189,7 @@
                                 service
                             </h3>
                             <ul>
-                                <li><a href="#">Home</a></li>
+                                <li><a href="<?php echo base_url('Bps_kasi')?>">Home</a></li>
                                 <li><a href="#">Jadwal</a></li>
                                 <li><a href="#">Daftar Staff</a></li>
                             </ul>
