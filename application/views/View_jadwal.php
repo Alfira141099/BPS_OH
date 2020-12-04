@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BPS OH</title>
+    <title>BPS</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -47,7 +47,7 @@
                             <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="<?php echo base_url('Home')?>">home</a></li>
+                                        <li><a class="active" href="<?php echo base_url('Bps_oh/index')?>">home</a></li>
                                         <li><a href="<?= base_url('Login/logout')?>" class="login popup-with-form">Logout</a></li>
                                     </ul>
                                 </nav>

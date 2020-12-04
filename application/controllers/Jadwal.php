@@ -7,9 +7,9 @@ class Jadwal extends CI_Controller{
         $this->load->model('Model_pegawai');
     }
 
-    public function index($NIP)
+    public function index()
     {
-        $index= $this->Model_pegawai->get($NIP);
+        $index= $this->Model_pegawai->get();
         $data['jadwal'] = $this->Jadwal_model->tampil_data()->result();
         $this->load->view('View_jadwal', $data);
     }

@@ -24,16 +24,14 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/animate.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/slicknav.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
-    <link rel="stylesheet" href="<?php echo base_url('asset/css/responsive.css')?>">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="<?php echo base_url('asset/css/table.css')?>">
 </head>
 
 <body>
 
     <!-- header-start -->
     <header>
-        <div class="header-area " id="navigasi">
+        <div class="header-area" id="navigasi">
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center no-gutters">
@@ -48,12 +46,11 @@
                             <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="<?php echo base_url('Home')?>">home</a></li>
+                                        <li><a class="active" href="<?php echo base_url('Bps_oh/index')?>">home</a></li>
                                         <li><a href="<?= base_url('Login/logout')?>" class="login popup-with-form">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>
-                        </div>
                         </div>
                         <div class="col-12">
                             <div class="mobile_menu d-block d-lg-none"></div>
@@ -65,45 +62,89 @@
     </header>
     <!-- header-end -->
 
-     <!-- prising_area_start -->
+    <!-- slider_area_start -->
+    <div class="slider_area" id="slider">
+        <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay2">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-xl-9">
+                        <div class="slider_text text-center">
+                            <p>Penjadwalan OH</p>
+                            <h3>BPS Kabupaten Probolinggo</h3>
+                            <div class="find_dowmain">
+                                <form action="#" class="find_dowmain_form">
+                                  <td>  <input type="text" name="nama" id="nama" placeholder="Temukan nama">  </td>
+                                    <button type="submit" id="find">cari</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- slider_area_end -->
+
+    <!-- prising_area_start -->
     <div class="prising_area">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            JADWAL PERJALANAN DINAS 
-                        </h3>
-                        <h3>
-                        BPS KABUPATEN PROBOLINGGO
+                            Staff BPS Kabupaten Probolinggo
                         </h3>
                     </div>
                 </div>
             </div>
+            </div>
 
-        <div class= "box-body">
-            <table class="table" id="dataTable">
-                <thead>
-                    <tr>
-                        <th style="text-align: center;">No</th>
-                        <th>Tanggal</th>
-                        <th>Seksi</th>
-                        <th>Kegiatan</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <section class="ftco-section">
+            <div class="container">
+
+            <?php 
+                $numcol = 4;
+                $countrow = 0;
+                $colwidth = 12 / $numcol;
+            ?>
+
+            <div class="row">
+
+            <?php
+                foreach ($pegawai as $pgi) :
+                ?>
+
+        <div class="col-xl-4 col-md-4 col-lg-4">
+            <div class="single_prising">
+            <div class="prising_icon blue">
+            </div>
                     
-                   
-                        <tr>
-                            <td style="text-align: center;"><?php echo $no++ ?></td>
-                            <td><?php echo $jadwal->TANGGAL ?></td>
-                            <td><?php echo $jadwal->SEKSI ?></td>
-                            <td><?php echo $jadwal->KEGIATAN ?></td>
-                        </tr>
-                    
-                </tbody>
-            </table>
+                <div class="card-header bg-light">.
+                <h4><td><a href="<?php echo base_url('Data_kasi/index/'.$pgi->NIP,''); ?>">
+                    <?php echo $pgi->NAMA ?></a></td></h4>
+                <p class="nip"><td><?php echo $pgi->NIP ?></td></p>
+                <p class="jabatan"><td><?php echo $pgi->Jabatan ?></td></p>
+                </div>
+               
+            </div>
         </div>
+            <?php
+                endforeach;
+                ?>
+
+            </div>
+
+            <?php 
+            $countrow++;
+            if ($countrow % $numcol == 0){
+              echo '</div><div class="row">';
+            }
+            
+          ?>
+
+      </div>
+         </section>
+
         </div>
     </div>
 
@@ -130,7 +171,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.instagram.com/bpskabprobolinggo/">
+                                        <a href="#">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -151,7 +192,7 @@
                             </ul>
 
                         </div>
-                    </div>
+                    </div> 
             </div>
         </div>
         <div class="copy-right_text">
@@ -163,7 +204,7 @@
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS Kab Probolinggo<i class="" aria-hidden="true"></i> <a href="" target="_blank"></a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        </p>
+                       </p>
                     </div>
                 </div>
             </div>
@@ -253,8 +294,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script src="<?php echo base_url('asset/js/jquery.magnific-popup.min.js')?>"></script>
     <script src="<?php echo base_url('asset/js/plugins.js')?>"></script>
     <script src="<?php echo base_url('asset/js/gijgo.min.js')?>"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <!--contact js-->
     <script src="<?php echo base_url('asset/js/contact.js')?>"></script>
@@ -266,7 +305,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
 
     <script>
         document.getElementById('find').style.background = '#26C867';
-        // In your Javascript (external .js resource or <script> tag)
     </script>
 </body>
 
