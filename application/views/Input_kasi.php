@@ -49,9 +49,9 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
-                                        <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                         <li><a class="" href="<?php echo base_url('Input_pegawai/index')?>">Input Pegawai</a></li>
                                         <li><a class="" href="<?php echo base_url('Pegawai/index')?>">Data Pegawai</a></li>
+                                        <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>
