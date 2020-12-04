@@ -38,7 +38,7 @@ class Kasi extends CI_Controller {
             'id' => $id
         );
 		$this->Input_jadwal->inputseksi($data, 'jadwal');
-		redirect('Jadwal');
+		redirect('Data_kasi');
 	}
 	
 	public function getDateAjax(){
