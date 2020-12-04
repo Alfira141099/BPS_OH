@@ -48,8 +48,10 @@
                             <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="<?php echo base_url('Home')?>">home</a></li>
-                                        <li><a href="<?= base_url('Login/logout')?>" class="login popup-with-form">Logout</a></li>
+                                        <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
+                                        <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
+                                        <li><a class="" href="<?php echo base_url('Input_pegawai/index')?>">Input Pegawai</a></li>
+                                        <li><a class="" href="<?php echo base_url('Pegawai/index')?>">Data Pegawai</a></li>
                                     </ul>
                                 </nav>
                             </div>

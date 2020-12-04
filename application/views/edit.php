@@ -47,8 +47,8 @@
                             <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="<?php echo base_url('Home')?>">home</a></li>
-                                        <li><a href="#test-form" class="login popup-with-form">Logout</a></li>
+                                    <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
+                                    <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>
