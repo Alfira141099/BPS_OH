@@ -11,12 +11,12 @@ class My_login{
 	public function login($username,$password){
 		$check = $this->CI->Model_login->login($username,$password);
 		if($check){
-			$NIP = $check->NIP;
+			$id = $check->id;
 			$username = $check->username;
 			$password = $check->password;
 
 			//proses create session untuk login
-			$this->CI->session->set_userdata('NIP',$NIP);
+			$this->CI->session->set_userdata('id',$id);
 			$this->CI->session->set_userdata('username',$username);
 			$this->CI->session->set_userdata('password',$password);
 
@@ -38,7 +38,7 @@ class My_login{
 	}
 	public function logout(){
 		//proses unset session
-		$this->CI->session->unset_userdata('NIP');
+		$this->CI->session->unset_userdata('id');
 		$this->CI->session->unset_userdata('username');
 		$this->CI->session->unset_userdata('password');
 
