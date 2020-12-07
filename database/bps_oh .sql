@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 09:31 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Dec 07, 2020 at 04:49 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -46,8 +46,8 @@ CREATE TABLE `kasi` (
   `id` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `NIP` varchar(20) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL
+  `username` varchar(255) NOT NULL,
+  `password` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -110,6 +110,27 @@ INSERT INTO `seksi` (`id`, `seksi`) VALUES
 (3, 'Produksi'),
 (4, 'Sosial');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `level` enum('Kasi','Staf','','') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
+(1, 'kasi', '123456', 'Kasi'),
+(2, 'staf', '123456', 'Staf');
+
 --
 -- Indexes for dumped tables
 --
@@ -126,7 +147,8 @@ ALTER TABLE `jadwal`
 -- Indexes for table `kasi`
 --
 ALTER TABLE `kasi`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `NIP` (`NIP`);
 
 --
 -- Indexes for table `pegawai`
@@ -142,6 +164,12 @@ ALTER TABLE `seksi`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -149,13 +177,19 @@ ALTER TABLE `seksi`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `seksi`
 --
 ALTER TABLE `seksi`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
