@@ -11,18 +11,18 @@ class My_login{
 	public function login($username,$password){
 		$check = $this->CI->Model_login->login($username,$password);
 		if($check){
-			$NIP = $check->NIP;
+			$id_user = $check->id_user;
 			$username = $check->username;
 			$password = $check->password;
 
 			//proses create session untuk login
-			$this->CI->session->set_userdata('NIP',$NIP);
+			$this->CI->session->set_userdata('id_user',$id);
 			$this->CI->session->set_userdata('username',$username);
 			$this->CI->session->set_userdata('password',$password);
 
 			//End Proses create session untuk login 
 			//redirect ke halaman home
-			redirect(base_url('Home'));
+			redirect(base_url('Bps_oh'));
 		}else{
 			$this->CI->session->set_flashdata('Warning', 'Username atau Password salah');
 			redirect(base_url('Login'));
@@ -38,7 +38,7 @@ class My_login{
 	}
 	public function logout(){
 		//proses unset session
-		$this->CI->session->unset_userdata('NIP');
+		$this->CI->session->unset_userdata('id');
 		$this->CI->session->unset_userdata('username');
 		$this->CI->session->unset_userdata('password');
 
