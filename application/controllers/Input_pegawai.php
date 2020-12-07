@@ -7,6 +7,7 @@ class Input_pegawai extends CI_Controller {
 		parent::__construct();		
 		$this->load->model('Minput_pegawai');
 		$this->load->helper('url');
+		$this->load->library('form_validation');
  
 	}
  

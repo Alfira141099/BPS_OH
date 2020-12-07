@@ -1,4 +1,7 @@
 body{
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  font-style: normal;
   background-color: #0E156E;
 }
 
@@ -121,5 +124,12 @@ body{
 
 #tombol{
   color: #fff;
+}
+
+.doen_have_acc{
+  font-size: 16px;
+  color: #0181F5;
+  margin-top: 33px;
+  font-weight: 400;
 }
 

@@ -5,6 +5,8 @@ class Bps_kasi extends CI_Controller{
         parent::__construct();
         $this->load->model('Model_pegawai');
         $this->load->model('Model_kasi');
+        //proteksi halaman dengan library my_login
+        $this->my_login->check_login();
 
     }
 

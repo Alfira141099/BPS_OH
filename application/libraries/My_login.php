@@ -14,15 +14,17 @@ class My_login{
 			$id_user = $check->id_user;
 			$username = $check->username;
 			$password = $check->password;
+			$level = $check->level;
 
 			//proses create session untuk login
 			$this->CI->session->set_userdata('id_user',$id);
 			$this->CI->session->set_userdata('username',$username);
 			$this->CI->session->set_userdata('password',$password);
+			$this->CI->session->set_userdata('level',$level);
 
 			//End Proses create session untuk login 
 			//redirect ke halaman home
-			redirect(base_url('Bps_oh'));
+			redirect(base_url('Bps_kasi'));
 		}else{
 			$this->CI->session->set_flashdata('Warning', 'Username atau Password salah');
 			redirect(base_url('Login'));
@@ -41,6 +43,7 @@ class My_login{
 		$this->CI->session->unset_userdata('id');
 		$this->CI->session->unset_userdata('username');
 		$this->CI->session->unset_userdata('password');
+		$this->CI->session->unset_userdata('level');
 
 		//END proses UNSET session untuk login
 		//Redirect ke halaman Dashboard

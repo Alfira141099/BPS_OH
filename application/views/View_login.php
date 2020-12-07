@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </form>
-                <a class="lupa" href="#">Lupa Password ?</a>
+                <a class="doen_have_acc" href="#">Lupa Password ?</a>
               </div>
         </div>
     </form>

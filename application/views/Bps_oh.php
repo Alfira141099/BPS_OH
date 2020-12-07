@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
+<?php $level = $this->session->userdata('level');?>
 
 <head>
     <meta charset="utf-8">
@@ -48,6 +49,8 @@
                                     <ul id="navigation">
                                         <li><a class="active" href="<?php echo base_url('Bps_oh/index')?>">home</a></li>
                                         <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
+                                        <?php if($level=='Kasi'){
+                                            echo '<li><a class="" href="'. base_url('Kasi').'">Input Jadwal</a></li>';}?>
                                     </ul>
                                 </nav>
                             </div>

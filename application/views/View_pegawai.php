@@ -1,6 +1,5 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -49,8 +48,10 @@
                                 <nav>
                                     <ul id="navigation">
                                     <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
+                                    
                                         <li><a class="" href="<?php echo base_url('Kasi/index')?>">Input Jadwal</a></li>
                                         <li><a class="" href="<?php echo base_url('Input_pegawai/index')?>">Input Pegawai</a></li>
+                                        <li><a class="active" href="<?php echo base_url('Pegawai/index')?>">Data Pegawai</a></li>
                                         <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                     </ul>
                                 </nav>
@@ -84,7 +85,7 @@
 
         <div class= "box-body">
             <div class="table-responsive">
-            <table class="table" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th style="text-align: center;">No</th>
@@ -92,6 +93,7 @@
                         <th style="text-align: center;">NIP</th>
                         <th style="text-align: center;">Jabatan</th>
                         <th>Aksi</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
