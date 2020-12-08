@@ -51,7 +51,7 @@
                                             echo '
                                         <li><a class="" href="'.base_url('Kasi/index').'">Input Jadwal</a></li>
                                         <li><a class="" href="'.base_url('Input_pegawai/index').'">Input Pegawai</a></li>
-                                        <li><a class="" href="<'.base_url('Pegawai/index').'">Data Pegawai</a></li>';}?>
+                                        <li><a class="" href="'.base_url('Pegawai/index').'">Data Pegawai</a></li>';}?>
                                         <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                     </ul>
                                 </nav>
