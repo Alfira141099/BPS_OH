@@ -9,21 +9,21 @@ class Jadwal extends CI_Controller{
         $this->my_login->check_login();
     }
 
-    public function index()
+   public function index($NIP)
     {
         $index= $this->Model_pegawai->get();
-        $data['jadwal'] = $this->Jadwal_model->tampil_data()->result();
+        $data['jadwal'] = $this->Jadwal_model->tampil_data($NIP)->row_array();
         $this->load->view('View_jadwal', $data);
     }
 
      //READ JADWAL TIAP-TIAP PEGAWAI 
-    public function detailjadwal($NIP){
+    //public function detailjadwal($NIP){
     //  $data->pegawai = $this->Model_pegawai->getdetailjadwal($NIP)->row_array();
-        $this->load->model('Model_pegawai');
-        $detailjadwal = $this->Model_pegawai->detail_data($NIP);
-        $this->load->model('Jadwal_model');
-        $data['jadwal'] = $detailjadwal;
-        $this->load->view('View_jadwal',$data);
-    }
+        //$this->load->model('Model_pegawai');
+        //$detailjadwal = $this->Model_pegawai->detail_data($NIP);
+        //$this->load->model('Jadwal_model');
+        //$data['jadwal'] = $detailjadwal;
+        //$this->load->view('View_jadwal',$data);
+    //}
 
 }

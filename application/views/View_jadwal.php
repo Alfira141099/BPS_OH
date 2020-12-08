@@ -94,16 +94,14 @@
                    <?php
                    if(is_array($jadwal)){
                     $no = 1;
-                    foreach ($jadwal as $Jdl) :
                         ?>
                         <tr>
                             <td style="text-align: center;"><?php echo $no++ ?></td>
-                            <td><?php echo $Jdl->TANGGAL ?></td>
-                            <td><?php echo $Jdl->SEKSI ?></td>
-                            <td><?php echo $Jdl->KEGIATAN ?></td>
+                            <td><?php echo $jadwal['TANGGAL'] ?></td>
+                            <td><?php echo $jadwal['SEKSI'] ?></td>
+                            <td><?php echo $jadwal['KEGIATAN'] ?></td>
                         </tr>
                    <?php
-                    endforeach;
                 }
                     ?>
                 </tbody>

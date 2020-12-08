@@ -1,10 +1,15 @@
 <?php 
  
 class Jadwal_model extends CI_Model{
-    
-    public  function tampil_data()
+
+    public  function tampil_data($NIP)
     {
-        return  $this->db->get('jadwal');
+      //return  $this->db->get('jadwal');
+      $this->db->select('*');
+      $this->db->from('jadwal');
+      $this->db->where('NIP',$NIP);
+      $query = $this->db->get();
+      return $query;
     }
 
   //  public function get_where($where){
@@ -19,8 +24,8 @@ class Jadwal_model extends CI_Model{
 //			return $query;
 //	}
 
-   public function detail_data($NIP = NULL){
-      $query = $this->db->get_where('jadwal', array('NIP' => $NIP))->row();
-      return $query;
-    }
+   //public function detail_data($NIP = NULL){
+      //$query = $this->db->get_where('jadwal', array('NIP' => $NIP))->row();
+      //return $query;
+    //}
 }

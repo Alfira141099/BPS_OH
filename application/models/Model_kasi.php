@@ -2,9 +2,14 @@
  
 class Model_kasi extends CI_Model{
     
-    public function tampil_data()
+    public  function tampil_data($NIP)
     {
-        return $this->db->get('jadwal');
+      //return  $this->db->get('jadwal');
+      $this->db->select('*');
+      $this->db->from('jadwal');
+      $this->db->where('NIP',$NIP);
+      $query = $this->db->get();
+      return $query;
     }
     public function hapus_data($where, $table){
         $this->db->where($where);

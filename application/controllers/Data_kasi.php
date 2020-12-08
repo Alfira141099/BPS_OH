@@ -2,15 +2,17 @@
 
 class Data_kasi extends CI_Controller{
 
-    public function __construct(){
+   public function __construct()
+    {
         parent::__construct();
-        //proteksi halaman dengan library my_login
+        $this->load->model('Model_kasi');
+        $this->load->model('Model_pegawai');
     }
 
-    public function index()
+    public function index($NIP)
     {
-        $this->load->model('Model_kasi');
-        $data['Jadwal'] = $this->Model_kasi->tampil_data()->result();
+        $index= $this->Model_pegawai->get();
+        $data['jadwal'] = $this->Model_kasi->tampil_data($NIP)->row_array();
         $this->load->view('view_kasi', $data);
     }
     public function update(){
