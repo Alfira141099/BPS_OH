@@ -21,6 +21,11 @@ class Bps_kasi extends CI_Controller{
         $data['jadwal'] = $this->Model_kasi->get()->result();
         $this->load->view('view_kasi', $data);
     }
+    public function seacrh(){
+        $pegawai= $this->input->post('pegawai');
+        $data['pegawai']=$this->Model_pegawai->get_pegawai($pegawai);
+        $this->load->view('Home_kasi', $data);
+    }
 
 
 }

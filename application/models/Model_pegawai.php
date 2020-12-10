@@ -12,7 +12,15 @@ class Model_pegawai extends CI_Model{
     function inputpegawai($data, $table){
 		$query = $this->db->insert($table, $data);
 		return $query;
-	}
+    }
+    public function get_pegawai($pegawai){
+        $this->db->select('*');
+        $this->db->from('pegawai');
+        $this->db->like('NAMA', $pegawai);
+        $this->db->or_like('NIP', $pegawai);
+        $this->db->or_like('Jabatan', $pegawai);
+        return $this->db->get()->result();
+    }
 
 	//function ambil_data($tabel){
 

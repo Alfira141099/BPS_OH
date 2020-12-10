@@ -77,10 +77,10 @@
                             <p>Penjadwalan OH</p>
                             <h3>BPS Kabupaten Probolinggo</h3>
                             <div class="find_dowmain">
-                                <form action="#" class="find_dowmain_form">
-                                  <td>  <input type="text" name="nama" id="nama" placeholder="Temukan nama">  </td>
-                                    <button type="submit" id="find">cari</button>
-                                </form>
+                                  <?php echo form_open('Bps_kasi/seacrh')?>
+                                  <input type="text" name="pegawai"  class="find_dowmain_form" placeholder="Temukan nama">
+                                    <button type="submit" class="btn btn-success">cari</button>
+                                    <?php echo form_close()?>
                             </div>
                         </div>
                     </div>
