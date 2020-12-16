@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2020 at 04:49 AM
--- Server version: 10.1.38-MariaDB
--- PHP Version: 7.3.2
+-- Generation Time: Dec 16, 2020 at 01:49 PM
+-- Server version: 10.4.10-MariaDB
+-- PHP Version: 7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -35,6 +35,17 @@ CREATE TABLE `jadwal` (
   `SEKSI` varchar(255) NOT NULL,
   `KEGIATAN` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `jadwal`
+--
+
+INSERT INTO `jadwal` (`id`, `NIP`, `TANGGAL`, `SEKSI`, `KEGIATAN`) VALUES
+(1, '197409271995121001', '2020-12-23', 'Sosial', 'lapang'),
+(20, '196307231990031002', '2020-12-16', 'TU', 'lapangan'),
+(22, '196307231990031002', '2020-12-16', 'Produksi', 'produksi'),
+(23, '196307231990031002', '2020-12-24', 'Pengolahan', 'produksi'),
+(24, '196307231990031002', '2020-12-31', 'TU', 'Sosialllllllllllllllllll');
 
 -- --------------------------------------------------------
 
@@ -140,8 +151,8 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 --
 ALTER TABLE `jadwal`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `kasi` (`SEKSI`),
-  ADD KEY `NIP` (`NIP`);
+  ADD KEY `NIP` (`NIP`),
+  ADD KEY `SEKSI` (`SEKSI`);
 
 --
 -- Indexes for table `kasi`
@@ -177,7 +188,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `seksi`
