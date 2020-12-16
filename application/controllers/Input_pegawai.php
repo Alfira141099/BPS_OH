@@ -31,7 +31,8 @@ class Input_pegawai extends CI_Controller {
 
 
 		if($this->form_validation->run()==false){
-			redirect(base_url('Input_pegawai'));
+			$this->load->view('Vinput_pegawai');
+			// redirect(base_url('Vinput_pegawai'));
 		}else{
 		$NAMA = $this->input->post('Nama');
         $NIP = $this->input->post('NIP');

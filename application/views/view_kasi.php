@@ -84,6 +84,20 @@
             </div>
 
         <div class= "box-body">
+            <?php if($this->session->flashdata('message')) : ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-danger col-6 text-center" >
+                    <p class="text-dark"><?= ucwords($this->session->flashdata('message')) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('success')) : ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-success col-6 text-center" >
+                    <p class="text-dark"><?= ucwords($this->session->flashdata('success')) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
             <table class="table" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
@@ -102,23 +116,21 @@
                     
                         ?>
                         <tr>
-                            <td style="text-align: center;"><?php echo $no++ ?></td>
-                            <td><?php echo $jadwal['TANGGAL'] ?></td>
-                            <td><?php echo $jadwal['SEKSI'] ?></td>
-                            <td><?php echo $jadwal['KEGIATAN'] ?></td>
+                            <td style="text-align: .center;"><?php echo $no++ ?></td>
+                            <td><?php echo $jdl['TANGGAL'] ?></td>
+                            <td><?php echo $jdl['SEKSI'] ?></td>
+                            <td><?php echo $jdl['KEGIATAN'] ?></td>
                             <td>
-
                                 <span onclick="javascript: return confirm('Anda yakin hapus?')">
-                                    <?php echo anchor('Data_kasi/hapus/' .$jdl->id, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
+                                    <?php echo anchor('Data_kasi/hapus/'.$jdl['id'], '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
                                 </span>
                                 <span>
-                                    <?php echo anchor('Data_kasi/edit/' .$jdl->id, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?>
+                                    <?php echo anchor('Data_kasi/edit/'.$jdl['id'], '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?>
                                 </span>
                             </td>
                         </tr>
                     <?php
-                    endforeach;
-                    //}
+                    endforeach
                     ?>
                 </tbody>
             </table>

@@ -7,12 +7,17 @@ class Data_kasi extends CI_Controller{
         parent::__construct();
         $this->load->model('Model_kasi');
         $this->load->model('Model_pegawai');
+        $this->load->model('Jadwal_model');
     }
 
-    public function index($NIP)
+    public function index($NIP = false)
     {
-        $index= $this->Model_pegawai->get();
-        $data['jadwal'] = $this->Model_kasi->tampil_data($NIP)->row_array();
+        $index = $this->Model_pegawai->get();
+        $data['jadwal'] = $this->Model_kasi->tampil_data($NIP)->result_array();
+        if(!$data['jadwal'] || !$NIP){
+            $this->session->set_flashdata('message','Jadwal tidak tersedia!!!');
+            redirect('Bps_kasi');
+        }
         $this->load->view('view_kasi', $data);
     }
     public function update(){
@@ -30,17 +35,21 @@ class Data_kasi extends CI_Controller{
         $where = array(
             'id' => $id
         );
+        $nip = $this->Jadwal_model->get_where($where)->row_array()['NIP'];
         $this->load->model('Model_kasi');
         $this->load->model('Model_seksi');
         $this->Model_kasi->update_data($where, $data, 'Jadwal');
-        redirect('Data_Kasi/index');
+        $this->session->set_flashdata('success','Jadwal berhasil diedit!!!');
+        redirect('Data_kasi/index/'.$nip);
     }
     public function hapus($id){
-        $this->load->model('Model_kasi');
-        $this->load->model('Model_seksi');
+        // $this->load->model('Model_kasi');
+        // $this->load->model('Model_seksi');
         $where = array('id'=>$id);
-        $this->Model_kasi->hapus_data($where, 'Jadwal');
-        redirect('Data_kasi/index');
+        $nip = $this->Jadwal_model->get_where($where)->row_array()['NIP'];
+        $this->Model_kasi->hapus_data($where, 'jadwal');
+        $this->session->set_flashdata('success','Jadwal berhasil dihapus!!!');
+        redirect('Data_kasi/index/'.$nip);
     }
     public function edit($id){
         $this->load->model('Model_kasi');

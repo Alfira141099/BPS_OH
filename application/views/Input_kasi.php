@@ -74,6 +74,13 @@
           <div class="col-md-4 mb-md-1">
             
             <h2 class="text-center">Penjadwalan OH<br> </h2>
+            <?php if($this->session->flashdata('message')) : ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-success text-center" >
+                    <p class="text-dark"><?= ucwords($this->session->flashdata('message')) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
             <form action="<?php echo base_url().'Kasi/tambah_aksi';?>" id="form-input" method="POST">
               <div class="form-group">
                 <label for="nama">Nama</label>

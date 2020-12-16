@@ -12,6 +12,10 @@ class Jadwal_model extends CI_Model{
       return $query;
     }
 
+    public function get_where($where){
+      return $this->db->get_where('jadwal',$where);
+    }
+
   //  public function get_where($where){
   //      return $this->db->get_where('jadwal',$where);
   //  }

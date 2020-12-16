@@ -38,19 +38,20 @@
                     </a>
                 </div>
                 <h3><center>BPS OH</center></h3>
-
-            <?php
-                if($this->session->flashdata('sukses')){
-
-                ?>
-                <strong style="margin-top: 5px" class="text-success pl-3"><?php echo $this->session->flashdata('sukses');?></strong>
-            <?php }?>
-            <?php
-                if($this->session->flashdata('warning')){
-
-                ?>
-                <strong style="margin-top: 5px" class="text-danger pl-3"><?php echo $this->session->flashdata('warning');?></strong>
-            <?php }?>
+            <?php if($this->session->flashdata('warning')) : ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-danger" >
+                    <p class="text-dark"><?= ucwords($this->session->flashdata('warning')) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('sukses')) : ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-success" >
+                    <p class="text-dark"><?= ucwords($this->session->flashdata('sukses')) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
                 <form>
                     <?php 
                     //validasi form jika ada error

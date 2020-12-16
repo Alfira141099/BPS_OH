@@ -26,7 +26,7 @@ class My_login{
 			//redirect ke halaman home
 			redirect(base_url('Bps_kasi'));
 		}else{
-			$this->CI->session->set_flashdata('Warning', 'Username atau Password salah');
+			$this->CI->session->set_flashdata('warning', 'Username atau Password salah');
 			redirect(base_url('Login'));
 		}
 	}

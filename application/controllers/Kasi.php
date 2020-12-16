@@ -40,7 +40,8 @@ class Kasi extends CI_Controller {
             'id' => $id
         );
 		$this->Input_jadwal->inputseksi($data, 'jadwal');
-		redirect('Data_kasi');
+		$this->session->set_flashdata('message','Jadwal berhasil ditambahkan!!!');
+		redirect('Kasi');
 	}
 	
 	public function getDateAjax(){

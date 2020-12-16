@@ -11,9 +11,9 @@ class Model_kasi extends CI_Model{
       $query = $this->db->get();
       return $query;
     }
-    public function hapus_data($where, $table){
+    public function hapus_data($where, $tabel){
         $this->db->where($where);
-        $this->db->delete($table);
+        $this->db->delete($tabel);
     }
     public function edit_data($where, $table){
         return $this->db->join('pegawai', 'pegawai.NIP = jadwal.NIP')
