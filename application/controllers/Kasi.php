@@ -7,7 +7,7 @@ class Kasi extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->model('Input_jadwal');
-	//	$this->load->model('Jadwal_model');
+		$this->load->model('Jadwal_model');
 		$this->load->model('Model_pegawai');
 		//proteksi halaman dengan library my_login
         $this->my_login->check_login();

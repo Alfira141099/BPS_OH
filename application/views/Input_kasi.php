@@ -26,7 +26,8 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/responsive.css')?>">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css">
+<!--     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -85,6 +86,7 @@
               <div class="form-group">
                 <label for="nama">Nama</label>
                         <select name="NIP" id="nama" class="pegawai form-control">
+                        <option disabled="disabled" selected="selected">Pilih Nama Pegawai</option>                            
                 <?php foreach ($Pegawai as $pgi): ?>
                         <option value="<?php echo $pgi->NIP ?>"><?php echo $pgi->NAMA?></option>
                 <?php endforeach ?>
@@ -92,7 +94,7 @@
               </div>
               <div class="form-group">
                 <label for="nama">Seksi</label>
-                        <select name="seksi" class="form-control">
+                        <select name="seksi" id="seksi" class="form-control">
                 <?php foreach ($dataseksi as $key): ?>
                         <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
                 <?php endforeach ?>
@@ -101,8 +103,8 @@
               </div>
               <div class="form-group">
                 <label for="tempat">Tanggal</label>
-                        <div class="input-group">
-                            <input id="tanggal" data-date-format="mm/dd/yyyy" type="date" class="form-control datepicker" placeholder="tanggal" name="tanggal" required>
+                <div class="input-group">
+                    <input id="tanggal" data-date-format="mm/dd/yyyy" type="text" class="form-control datepicker" placeholder="tanggal" name="tanggal" autocomplete="off">
               </div>
               </div>
               
@@ -269,7 +271,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script src="<?php echo base_url('asset/js/jquery.magnific-popup.min.js')?>"></script>
     <script src="<?php echo base_url('asset/js/plugins.js')?>"></script>
     <script src="<?php echo base_url('asset/js/gijgo.min.js')?>"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+<!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <!--contact js-->
@@ -283,7 +286,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script>
         $(document).ready(function() {
             $('.pegawai').select2();
-
+            let disableddate = [];
             $('.pegawai').change(function(){
                 let nip = this.value;
                 $.ajax({
@@ -292,22 +295,35 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
                     data: {nip:nip},
                     success: 
                     function(result){
-                        $('.datepicker').datepicker({
-                            format: 'mm/dd/yyyy',
-                            beforeShowDay: function(date){
-                                dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-                                if(result.indexOf(dmy) != -1){
-                                    return false;
-                                }
-                                else{
-                                    return true;
-                                }
-                            }
-                        });
+                        JSON.parse(result).forEach(item => disableddate.push(item))
+
+                        // $('.datepicker').datepicker({
+                        //     format: 'mm/dd/yyyy',
+                        //     beforeShowDay: function(date){
+                        //         dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+                        //         if(result.indexOf(dmy) != -1){
+                        //             return false;
+                        //         }
+                        //         else{
+                        //             return true;
+                        //         }
+                        //     }
+                        // });
                     }
                 });
             });
-
+            $('.datepicker').datepicker({
+                format: 'mm-dd-yyyy',
+                beforeShowDay: function(date){
+                    dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
+                    if(disableddate.indexOf(dmy) != -1){
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                }
+            });
         });
     </script>
     <script>
