@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
+<?php $level = $this->session->userdata('level');?>
 
 <head>
     <meta charset="utf-8">
@@ -49,9 +50,11 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
-                                        <li><a class="" href="<?php echo base_url('Kasi/index')?>">Input Jadwal</a></li>
-                                        <li><a class="" href="<?php echo base_url('Input_pegawai/index')?>">Input Pegawai</a></li>
-                                        <li><a class="" href="<?php echo base_url('Pegawai/index')?>">Data Pegawai</a></li>
+                                        <?php if($level=='Kasi'){
+                                            echo '
+                                        <li><a class="" href="'.base_url('Kasi/index').'">Input Jadwal</a></li>
+                                        <li><a class="" href="'.base_url('Input_pegawai/index').'">Input Pegawai</a></li>
+                                        <li><a class="" href="'.base_url('Pegawai/index').'">Data Pegawai</a></li>';}?>
                                         <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                     </ul>
                                 </nav>
@@ -98,14 +101,17 @@
                 </div>
             </div>
             <?php endif; ?>
-            <table class="table" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th style="text-align: center;">No</th>
                         <th>Tanggal</th>
                         <th>Seksi</th>
                         <th>Kegiatan</th>
-                        <th>Aksi</th>
+                        <?php if($level=='Kasi'){
+                            echo '
+                        <th>Aksi</th>';
+                        }?>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,20 +119,22 @@
                     //if(is_array($jadwal)){
                     $no = 1;
                     foreach ($jadwal as $jdl) :
-                    
                         ?>
                         <tr>
                             <td style="text-align: .center;"><?php echo $no++ ?></td>
                             <td><?php echo $jdl['TANGGAL'] ?></td>
                             <td><?php echo $jdl['SEKSI'] ?></td>
                             <td><?php echo $jdl['KEGIATAN'] ?></td>
-                            <td>
+                            <td><?php if($level=='Kasi'){
+                                ?>
                                 <span onclick="javascript: return confirm('Anda yakin hapus?')">
                                     <?php echo anchor('Data_kasi/hapus/'.$jdl['id'], '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
                                 </span>
                                 <span>
                                     <?php echo anchor('Data_kasi/edit/'.$jdl['id'], '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?>
                                 </span>
+                                <?php }
+                                ?>
                             </td>
                         </tr>
                     <?php

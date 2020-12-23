@@ -8,6 +8,8 @@ class Data_kasi extends CI_Controller{
         $this->load->model('Model_kasi');
         $this->load->model('Model_pegawai');
         $this->load->model('Jadwal_model');
+        //proteksi halaman dengan library my_login
+        $this->my_login->check_login();
     }
 
     public function index($NIP = false)
