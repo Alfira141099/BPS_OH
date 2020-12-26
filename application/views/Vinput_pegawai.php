@@ -68,7 +68,7 @@
         <div class="container">
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
-          <h2 class="text-center"> INPUT DATA PEGAWAI<br> </h2>
+          <h2 class="text-center"> TAMBAH DATA PEGAWAI<br> </h2>
                     <form action="<?php echo base_url('Input_pegawai/tambah_aksi'); ?>"method="post">
                         <div class="form-group">
                             <label>Nama</label>

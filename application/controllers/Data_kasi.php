@@ -24,6 +24,7 @@ class Data_kasi extends CI_Controller{
     }
     public function update(){
         $id         = $this->input->post('id');
+        $NIP         = $this->input->post('nip');
         $TANGGAL    = $this->input->post('Tanggal');
         $KEGIATAN   = $this->input->post('Kegiatan');
         $SEKSI      = $this->input->post('Seksi');
@@ -37,12 +38,41 @@ class Data_kasi extends CI_Controller{
         $where = array(
             'id' => $id
         );
-        $nip = $this->Jadwal_model->get_where($where)->row_array()['NIP'];
-        $this->load->model('Model_kasi');
-        $this->load->model('Model_seksi');
-        $this->Model_kasi->update_data($where, $data, 'Jadwal');
-        $this->session->set_flashdata('success','Jadwal berhasil diedit!!!');
-        redirect('Data_kasi/index/'.$nip);
+
+        ($cek_data = $this->Jadwal_model->get_where([
+			'NIP' => $NIP,
+			'TANGGAL' => $TANGGAL 			
+		])->result()) ? $rule_tgl = 'required|is_unique[jadwal.TANGGAL]' : $rule_tgl = 'required' ;
+        
+        $this->form_validation->set_rules('Seksi', 'Seksi', 'required',
+			['required' => '%s harap dipilih']
+		);
+		$this->form_validation->set_rules('Tanggal', 'Tanggal', $rule_tgl,
+			[
+				'required' => '%s harap ditentukan',
+				'is_unique' => '%s sudah tersedia silahkan pilih tanggal yang lain' 
+			]
+		);
+		$this->form_validation->set_rules('Kegiatan', 'Kegiatan', 'required',
+			['required' => '%s harap diisi']
+		);
+		if ($this->form_validation->run() == FALSE)
+		{
+            $this->load->model('Model_kasi');
+            $this->load->model('Model_seksi');
+            $data['Seksi'] = $this->Model_seksi->get()->result();
+            $data['Jadwal'] = $this->Model_kasi->edit_data($where,'jadwal')->row();
+            $this->load->View('edit', $data);
+		}
+		else
+		{
+            $nip = $this->Jadwal_model->get_where($where)->row_array()['NIP'];
+            $this->load->model('Model_kasi');
+            $this->load->model('Model_seksi');
+            $this->Model_kasi->update_data($where, $data, 'Jadwal');
+            $this->session->set_flashdata('success','Jadwal berhasil diedit!!!');
+            redirect('Data_kasi/index/'.$nip);
+		}
     }
     public function hapus($id){
         // $this->load->model('Model_kasi');

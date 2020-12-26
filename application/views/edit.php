@@ -68,11 +68,12 @@
         <div class="container">
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
-          <h2 class="text-center"> Edit Penjadwalan OH<br> </h2>
+          <h2 class="text-center"> Edit Jadwal Perjalanan Dinas<br> </h2>
                     <form action="<?php echo base_url().'Data_kasi/update'; ?>"method="post">
                         <div class="form-group">
                             <label>Nama</label>
                             <input type="hidden" name="id" class="form-control" value="<?php echo $Jadwal->id ?>">
+                            <input type="hidden" name="nip" class="form-control" value="<?php echo $Jadwal->NIP ?>">
                             <input type="text" disabled name="Nama" class="form-control" value="<?php echo $Jadwal->NAMA ?>">
                         </div>
                         <div class="form-group">
@@ -82,10 +83,12 @@
                         <div class="form-group">
                             <label>Tanggal</label>
                             <input type="date" name="Tanggal" class="form-control" value="<?php echo $Jadwal->TANGGAL ?>">
+                            <div style="margin-top: 5px" class="error"><?php echo form_error('Tanggal', '<small class="text-danger">','</small>');?></div>
                         </div>
                         <div class="form-group">
                             <label>Kegiatan</label>
                             <input type="text" name="Kegiatan" class="form-control" value="<?php echo $Jadwal->KEGIATAN ?>">
+                            <div style="margin-top: 5px" class="error"><?php echo form_error('Kegiatan', '<small class="text-danger">','</small>');?></div>
                         </div>
                         <div class="form-group">
                             <label>Seksi</label>
@@ -93,7 +96,8 @@
                                 <?php foreach ($Seksi as $key): ?>
                                         <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
                                 <?php endforeach ?>
-                    </select>
+                            </select>
+                            <div style="margin-top: 5px" class="error"><?php echo form_error('Seksi', '<small class="text-danger">','</small>');?></div>
                         </div>
                         <button type="reset" class= "btn btn-danger">Reset</button>
                         <button type="submit" class= "btn btn-primary">Simpan</button>

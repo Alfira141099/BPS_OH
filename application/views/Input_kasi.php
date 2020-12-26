@@ -74,7 +74,7 @@
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
             
-            <h2 class="text-center">Penjadwalan OH<br> </h2>
+            <h2 class="text-center">Penjadwalan Perjalanan Dinas<br> </h2>
             <?php if($this->session->flashdata('message')) : ?>
             <div class="row justify-content-center">
                 <div class="alert alert-success text-center" >
@@ -91,26 +91,30 @@
                         <option value="<?php echo $pgi->NIP ?>"><?php echo $pgi->NAMA?></option>
                 <?php endforeach ?>
                     </select>
+                    <div style="margin-top: 5px" class="error"><?php echo form_error('NIP', '<small class="text-danger">','</small>');?></div>
               </div>
               <div class="form-group">
                 <label for="nama">Seksi</label>
                         <select name="seksi" id="seksi" class="form-control">
+                        <option selected disabled>Pilih Seksi</option>
                 <?php foreach ($dataseksi as $key): ?>
                         <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
                 <?php endforeach ?>
                     </select>
-
+                    <div style="margin-top: 5px" class="error"><?php echo form_error('seksi', '<small class="text-danger">','</small>');?></div>
               </div>
               <div class="form-group">
                 <label for="tempat">Tanggal</label>
                 <div class="input-group">
-                    <input id="tanggal" data-date-format="mm/dd/yyyy" type="text" class="form-control datepicker" placeholder="tanggal" name="tanggal" autocomplete="off">
-              </div>
+                    <input id="tanggal" type="date" class="form-control" placeholder="tanggal" name="tanggal" autocomplete="off">
+                </div>
+                <div style="margin-top: 5px" class="error"><?php echo form_error('tanggal', '<small class="text-danger">','</small>');?></div>
               </div>
               
               <div class="form-group">
                 <label for="nama">Kegiatan</label>
-                        <input type="text" class="form-control" name="kegiatan" id="" placeholder="" required>
+                <input type="text" class="form-control" name="kegiatan" id="" placeholder="Masukkan kegiatan">
+                <div style="margin-top: 5px" class="error"><?php echo form_error('kegiatan', '<small class="text-danger">','</small>');?></div>
               </div>
               <center>
               <div class="form-group">

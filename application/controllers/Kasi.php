@@ -22,7 +22,7 @@ class Kasi extends CI_Controller {
 
 	Public function tambah_aksi(){
 		$id         = $this->input->post('id');
-		$NAMA		= $this->input->post('NIP');
+		$NIP		= $this->input->post('NIP');
 	//	$NIP		= $this->input->post('nip');
 		$SEKSI		= $this->input->post('seksi');
 		$TANGGAL	= $this->input->post('tanggal');
@@ -30,18 +30,47 @@ class Kasi extends CI_Controller {
 
 		$data = array(
 	//		'nama'		=> $NAMA,
-			'NIP'		=> $NAMA,
+			'NIP'		=> $NIP,
 			'seksi'		=> $SEKSI,
 			'tanggal'	=> $TANGGAL,
 			'kegiatan'	=> $KEGIATAN
 		);
-
-		$where = array(
-            'id' => $id
-        );
-		$this->Input_jadwal->inputseksi($data, 'jadwal');
-		$this->session->set_flashdata('message','Jadwal berhasil ditambahkan!!!');
-		redirect('Kasi');
+		($cek_data = $this->Jadwal_model->get_where([
+			'NIP' => $NIP,
+			'TANGGAL' => $TANGGAL 			
+		])->result()) ? $rule_tgl = 'required|is_unique[jadwal.TANGGAL]' : $rule_tgl = 'required' ;
+		// var_dump($rule_tgl);die;
+		// $where = array(
+        //     'id' => $id
+		// );
+		
+		$this->form_validation->set_rules('seksi', 'Seksi', 'required',
+			['required' => '%s harap dipilih']
+		);
+		$this->form_validation->set_rules('NIP', 'Nama Pegawai', 'required',
+			['required' => '%s harap dipilih']
+		);
+		$this->form_validation->set_rules('tanggal', 'Tanggal', $rule_tgl,
+			[
+				'required' => '%s harap ditentukan',
+				'is_unique' => '%s sudah tersedia silahkan pilih tanggal yang lain' 
+			]
+		);
+		$this->form_validation->set_rules('kegiatan', 'Kegiatan', 'required',
+			['required' => '%s harap diisi']
+		);
+		if ($this->form_validation->run() == FALSE)
+		{
+			$data['Pegawai'] = $this->Model_pegawai->get()->result();
+			$data['dataseksi'] = $this->Input_jadwal->getjadwal();
+			$this->load->view('input_kasi',$data);
+		}
+		else
+		{
+			$this->Input_jadwal->inputseksi($data, 'jadwal');
+			$this->session->set_flashdata('message','Jadwal berhasil ditambahkan!!!');
+			redirect('Kasi');
+		}
 	}
 	
 	public function getDateAjax(){

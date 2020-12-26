@@ -72,7 +72,7 @@
                 <div class="row align-items-center justify-content-center">
                     <div class="col-xl-9">
                         <div class="slider_text text-center">
-                            <p>Penjadwalan OH</p>
+                            <p>Penjadwalan Perjalanan Dinas</p>
                             <h3>BPS Kabupaten Probolinggo</h3>
                             <div class="find_dowmain">
                                 <form action="#" class="find_dowmain_form">
