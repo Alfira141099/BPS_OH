@@ -122,7 +122,7 @@
                         ?>
                         <tr>
                             <td style="text-align: .center;"><?php echo $no++ ?></td>
-                            <td><?php echo date("l, j F Y",strtotime($jdl['TANGGAL'])) ?></td>
+                            <td><?php echo date("j F Y",strtotime($jdl['TANGGAL'])) ?></td>
                             <td><?php echo $jdl['SEKSI'] ?></td>
                             <td><?php echo $jdl['KEGIATAN'] ?></td>
                             <td><?php if($level=='Kasi'){

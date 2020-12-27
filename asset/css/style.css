@@ -983,7 +983,7 @@ h3 {
 
 /* line 156, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_header.scss */
 .header-area .main-header-area .main-menu ul li a:hover {
-  color: #fff;
+  color: #5EB3EC;
 }
 
 /* line 160, C:/Users/SPN Graphics/Desktop/cl sep/HTML/scss/_header.scss */
@@ -991,7 +991,7 @@ h3 {
   position: absolute;
   left: 0;
   top: 140%;
-  background: #fff;
+  background: #5EB3EC;
   width: 200px;
   z-index: 2;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.02);
