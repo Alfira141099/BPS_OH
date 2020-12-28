@@ -77,7 +77,7 @@
                             <p>Penjadwalan Perjalanan Dinas</p>
                             <h3>BPS Kabupaten Probolinggo</h3>
                             <div class="find_dowmain">
-                                <form action="<?= base_url('Bps_kasi/seacrh') ?>" method="post" class="find_dowmain_form">
+                                <form action="<?= base_url('Bps_kasi/search') ?>" method="post" class="find_dowmain_form">
                                   <td> <input type="text" name="pegawai"  class="find_dowmain_form" placeholder="Temukan nama">  </td>
                                     <button type="submit" id="find">cari</button>
                                 </form>
@@ -158,7 +158,7 @@
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-10 col-md-12 col-lg-10">
+                    <div class="col-xl-9 col-md-10 col-lg-8">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
@@ -171,11 +171,6 @@
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            <i class="fa fa-facebook-square"></i>
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="https://www.instagram.com/bpskabprobolinggo/">
                                             <i class="fa fa-instagram"></i>
                                         </a>
@@ -185,17 +180,12 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="col-xl-3 col-md-6 col-lg-5">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                service
+                                Tentang Sistem
                             </h3>
-                            <ul>
-                                <li><a href="<?php echo base_url('Bps_kasi')?>">Home</a></li>
-                                <li><a href="#">Jadwal</a></li>
-                                <li><a href="#">Daftar Staff</a></li>
-                            </ul>
-
+                            <p>Sistem Penjadwalan Dinas BPS Kabupaten Probolinggo merupakan sistem yang dirancang untuk mengatur penjadwalan perjalanan dinas BPS Kabupaten Probolinggo</p>
                         </div>
                     </div> 
             </div>
@@ -217,68 +207,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     </footer>
     <!-- footer -->
     <!-- link that opens popup -->
-
-    <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
-        <div class="popup_box ">
-            <div class="popup_inner">
-                <div class="logo text-center">
-                    <a href="#">
-                        <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
-                    </a>
-                </div>
-                <h3><center>Masuk Sebagai Kasi</center></h3>
-                <form action="#">
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <input type="email" placeholder="Email">
-                        </div>
-                        <div class="col-xl-12 col-md-12">
-                            <input type="password" placeholder="Password">
-                        </div>
-                        <div class="col-xl-12">
-                            <button type="submit" class="boxed_btn_green">Sign in</button>
-                        </div>
-                    </div>
-                </form>
-                <p class="doen_have_acc">Belum punya akun? <a class="dont-hav-acc" href="#test-form2">Sign Up</a>
-                </p>
-            </div>
-        </div>
-    </form>
-    <!-- form itself end -->
-
-    <!-- form itself end-->
-    <form id="test-form2" class="white-popup-block mfp-hide">
-        <div class="popup_box ">
-            <div class="popup_inner">
-                <div class="logo text-center">
-                    <a href="#">
-                        <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
-                    </a>
-                </div>
-                <h3><center>Registration</center></h3>
-                <form action="#">
-                    <div class="row">
-                        <div class="col-xl-12 col-md-12">
-                            <input type="email" placeholder="Masukkan email">
-                        </div>
-                        <div class="col-xl-12 col-md-12">
-                            <input type="password" placeholder="Password">
-                        </div>
-                        <div class="col-xl-12 col-md-12">
-                            <input type="Password" placeholder="Konfirm password">
-                        </div>
-                        <div class="col-xl-12">
-                            <button type="submit" class="boxed_btn_green">Sign Up</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </form>
-    <!-- form itself end -->
-
 
     <!-- JS here -->
     <script src="<?php echo base_url('asset/js/vendor/modernizr-3.5.0.min.js')?>"></script>
