@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2020 at 01:49 PM
+-- Generation Time: Dec 29, 2020 at 03:35 AM
 -- Server version: 10.4.10-MariaDB
 -- PHP Version: 7.3.12
 
@@ -45,21 +45,29 @@ INSERT INTO `jadwal` (`id`, `NIP`, `TANGGAL`, `SEKSI`, `KEGIATAN`) VALUES
 (20, '196307231990031002', '2020-12-16', 'TU', 'lapangan'),
 (22, '196307231990031002', '2020-12-16', 'Produksi', 'produksi'),
 (23, '196307231990031002', '2020-12-24', 'Pengolahan', 'produksi'),
-(24, '196307231990031002', '2020-12-31', 'TU', 'Sosialllllllllllllllllll');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `kasi`
---
-
-CREATE TABLE `kasi` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(255) NOT NULL,
-  `NIP` varchar(20) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(24, '196307231990031002', '2020-12-31', 'TU', 'Sosialllllllllllllllllll'),
+(26, '196307231990031002', '2020-12-16', 'Produksi', 'lapangan'),
+(27, '196307231990031002', '2020-12-16', 'Pengolahan', 'tes'),
+(28, '196307231990031002', '2020-12-27', 'Produksi', 'sensus'),
+(29, '197211111994011001', '2020-12-27', 'Sosial', 'dghd'),
+(30, '196307231990031002', '2020-12-27', 'Sosial', 'vryyu'),
+(31, '196307231990031002', '2020-12-27', 'Pengolahan', 'jkk'),
+(32, '196307231990031002', '2020-12-27', 'Produksi', 'asadsa'),
+(33, '196307231990031002', '2020-12-27', 'Sosial', 'yuioiy'),
+(34, '197409271995121001', '2020-12-28', 'Pengolahan', 'dd'),
+(35, '197409271995121001', '2020-12-28', 'Pengolahan', 'dd'),
+(36, '197409271995121001', '2020-12-28', 'TU', 'hjk'),
+(37, '196307231990031002', '2020-12-22', 'Pengolahan', 'dad'),
+(38, '196307231990031002', '2020-12-22', 'Pengolahan', 'sd'),
+(39, '196307231990031002', '2020-12-22', 'Pengolahan', 'dsdsad'),
+(40, '196307231990031002', '2020-12-22', 'Pengolahan', 'sds'),
+(41, '197110131998031001', '0000-00-00', 'TU', 'fgg'),
+(46, '196404222007011004', '2020-12-02', 'TU', 'Kegiatan Produksi'),
+(47, '196404222007011004', '2020-12-01', 'Pengolahan', 'Produksi 2'),
+(48, '196404222007011004', '2020-12-03', 'Pengolahan', 'asd'),
+(49, '196404222007011004', '2020-12-04', 'TU', 'oleh'),
+(50, '196404222007011004', '2020-12-27', 'Produksi', 'asd'),
+(51, '197110131998031001', '2020-12-30', 'TU', 'asd');
 
 -- --------------------------------------------------------
 
@@ -155,13 +163,6 @@ ALTER TABLE `jadwal`
   ADD KEY `SEKSI` (`SEKSI`);
 
 --
--- Indexes for table `kasi`
---
-ALTER TABLE `kasi`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `NIP` (`NIP`);
-
---
 -- Indexes for table `pegawai`
 --
 ALTER TABLE `pegawai`
@@ -188,7 +189,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `jadwal`
 --
 ALTER TABLE `jadwal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `seksi`
