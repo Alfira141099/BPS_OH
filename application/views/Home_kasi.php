@@ -97,7 +97,7 @@
                 <div class="col-xl-12">
                     <div class="section_title text-center mb-100">
                         <h3>
-                            Staff BPS Kabupaten Probolinggo
+                            Pegawai BPS Kabupaten Probolinggo
                         </h3>
                     </div>
                 </div>

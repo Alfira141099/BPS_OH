@@ -37,7 +37,7 @@
                         <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
                     </a>
                 </div>
-                <h3><center>BPS OH</center></h3>
+                <h3><center>SIMPENAS</center></h3>
             <?php if($this->session->flashdata('warning')) : ?>
             <div class="row justify-content-center">
                 <div class="alert alert-danger" >

@@ -96,7 +96,7 @@
               <div class="form-group">
                 <label for="nama">Seksi</label>
                         <select name="seksi" id="seksi" class="form-control">
-                        <option selected disabled>Pilih Seksi</option>
+                        <option selected disabled>Pilih Seksi/Subbag</option>
                 <?php foreach ($dataseksi as $key): ?>
                         <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
                 <?php endforeach ?>

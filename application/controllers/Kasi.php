@@ -53,7 +53,7 @@ class Kasi extends CI_Controller {
 		$this->form_validation->set_rules('tanggal', 'Tanggal', $rule_tgl,
 			[
 				'required' => '%s harap ditentukan',
-				'is_unique' => '%s sudah tersedia silahkan pilih tanggal yang lain' 
+				'is_unique' => '%s sudah terpilih silahkan pilih tanggal yang lain' 
 			]
 		);
 		$this->form_validation->set_rules('kegiatan', 'Kegiatan', 'required',
