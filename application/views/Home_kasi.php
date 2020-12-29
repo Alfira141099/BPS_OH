@@ -185,7 +185,7 @@
                             <h3 class="footer_title">
                                 Tentang Sistem
                             </h3>
-                            <p>Sistem Penjadwalan Dinas BPS Kabupaten Probolinggo merupakan sistem yang dirancang untuk mengatur penjadwalan perjalanan dinas BPS Kabupaten Probolinggo</p>
+                            <p>Sistem Penjadwalan Dinas BPS Kabupaten Probolinggo merupakan sistem yang dirancang untuk mengatur penjadwalan perjalanan dinas staf BPS Kabupaten Probolinggo</p>
                         </div>
                     </div> 
             </div>
