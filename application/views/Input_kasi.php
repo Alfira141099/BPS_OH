@@ -130,11 +130,11 @@
     </section>
 
     <!-- footer -->
-    <footer class="footer">
+     <footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-10 col-md-12 col-lg-10">
+                    <div class="col-xl-9 col-md-10 col-lg-8">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
@@ -147,11 +147,6 @@
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="#">
-                                            <i class="fa fa-facebook-square"></i>
-                                        </a>
-                                    </li>
-                                    <li>
                                         <a href="https://www.instagram.com/bpskabprobolinggo/">
                                             <i class="fa fa-instagram"></i>
                                         </a>
@@ -161,19 +156,14 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-2 col-md-6 col-lg-2">
+                    <div class="col-xl-3 col-md-6 col-lg-5">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                service
+                                Tentang Sistem
                             </h3>
-                            <ul>
-                                <li><a href="<?php echo base_url('Bps_kasi')?>">Home</a></li>
-                                <li><a href="#">Jadwal</a></li>
-                                <li><a href="#">Daftar Staff</a></li>
-                            </ul>
-
+                            <p>Sistem Penjadwalan Dinas BPS Kabupaten Probolinggo merupakan sistem yang dirancang untuk mengatur penjadwalan perjalanan dinas staf BPS Kabupaten Probolinggo</p>
                         </div>
-                    </div>
+                    </div> 
             </div>
         </div>
         <div class="copy-right_text">
