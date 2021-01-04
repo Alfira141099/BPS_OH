@@ -47,6 +47,7 @@
                                 <nav>
                                     <ul id="navigation">
                                         <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
+                                        <li><a class="" href="<?php echo base_url('Jadwal/index')?>">Semua Jadwal</a></li>
                                         <li><a class="" href="<?php echo base_url('Kasi/index')?>">Input Jadwal</a></li>
                                         <li><a class="active" href="<?php echo base_url('Input_pegawai/index')?>">Input Pegawai</a></li>
                                         <li><a class="" href="<?php echo base_url('Pegawai/index')?>">Data Pegawai</a></li>

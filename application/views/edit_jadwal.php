@@ -1,10 +1,11 @@
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>BPS</title>
+    <title>BPS OH</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -25,9 +26,6 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/slicknav.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/responsive.css')?>">
-    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
-<!--     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" integrity="sha512-mSYUmp1HYZDFaVKK//63EcZq4iFWFjxSL+Z3T/aCt4IO9Cejm03q3NKKYN6pFQzY0SBOr8h+eCIAZHPXcpZaNw==" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -49,12 +47,8 @@
                             <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
-                                        <li><a class="" href="<?php echo base_url('Jadwal/index')?>">Semua Jadwal</a></li>
-                                         <li><a class="active" href="<?php echo base_url('Kasi/index')?>">Input Jadwal</a></li>
-                                        <li><a class="" href="<?php echo base_url('Input_pegawai/index')?>">Input Pegawai</a></li>
-                                        <li><a class="" href="<?php echo base_url('Pegawai/index')?>">Data Pegawai</a></li>
-                                        <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
+                                    <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
+                                    <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -70,72 +64,57 @@
     </header>
     <!-- header-end -->
 
-<section class="ftco-section contact-section">
+    <section class="ftco-section contact-section">
         <div class="container">
         <div class="row block-5 justify-content-center mb-1">
           <div class="col-md-4 mb-md-1">
-            
-            <h2 class="text-center">Penjadwalan Perjalanan Dinas<br> </h2>
-            <?php if($this->session->flashdata('message')) : ?>
-            <div class="row justify-content-center">
-                <div class="alert alert-success text-center" >
-                    <p class="text-dark"><?= ucwords($this->session->flashdata('message')) ?></p>
-                </div>
+          <h2 class="text-center"> Edit Jadwal Perjalanan Dinas<br> </h2>
+                    <form action="<?php echo base_url().'Jadwal/update'; ?>"method="post">
+                        <div class="form-group">
+                            <label>Nama</label>
+                            <input type="hidden" name="id" class="form-control" value="<?php echo $Jadwal->id ?>">
+                            <input type="hidden" name="nip" class="form-control" value="<?php echo $Jadwal->NIP ?>">
+                            <input type="text" disabled name="Nama" class="form-control" value="<?php echo $Jadwal->NAMA ?>">
+                        </div>
+                        <div class="form-group">
+                            <label>NIP</label>
+                            <input type="text" disabled name="NIP" class="form-control" value="<?php echo $Jadwal->NIP ?>">
+                        </div>
+                        <div class="form-group">
+                            <label>Tanggal</label>
+                            <input type="date" name="Tanggal" class="form-control" value="<?php echo $Jadwal->TANGGAL ?>">
+                            <div style="margin-top: 5px" class="error"><?php echo form_error('Tanggal', '<small class="text-danger">','</small>');?></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Kegiatan</label>
+                            <input type="text" name="Kegiatan" class="form-control" value="<?php echo $Jadwal->KEGIATAN ?>">
+                            <div style="margin-top: 5px" class="error"><?php echo form_error('Kegiatan', '<small class="text-danger">','</small>');?></div>
+                        </div>
+                        <div class="form-group">
+                            <label>Seksi</label>
+                            <select name="Seksi" class="form-control">
+                                <?php foreach ($Seksi as $key): ?>
+                                        <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
+                                <?php endforeach ?>
+                            </select>
+                            <div style="margin-top: 5px" class="error"><?php echo form_error('Seksi', '<small class="text-danger">','</small>');?></div>
+                        </div>
+                        <button type="reset" class= "btn btn-danger">Reset</button>
+                        <button type="submit" class= "btn btn-primary">Simpan</button>
+                    </form>
+                </section>
             </div>
-            <?php endif; ?>
-            <form action="<?php echo base_url().'Kasi/tambah_aksi';?>" id="form-input" method="POST">
-              <div class="form-group">
-                <label for="nama">Nama</label>
-                        <select name="NIP" id="nama" class="pegawai form-control">
-                        <option disabled="disabled" selected="selected">Pilih Nama Pegawai</option>                            
-                <?php foreach ($Pegawai as $pgi): ?>
-                        <option value="<?php echo $pgi->NIP ?>"><?php echo $pgi->NAMA?></option>
-                <?php endforeach ?>
-                    </select>
-                    <div style="margin-top: 5px" class="error"><?php echo form_error('NIP', '<small class="text-danger">','</small>');?></div>
-              </div>
-              <div class="form-group">
-                <label for="nama">Seksi</label>
-                        <select name="seksi" id="seksi" class="form-control">
-                        <option selected disabled>Pilih Seksi/Subbag</option>
-                <?php foreach ($dataseksi as $key): ?>
-                        <option value="<?php echo $key->seksi ?>"><?php echo $key->seksi ?></option>
-                <?php endforeach ?>
-                    </select>
-                    <div style="margin-top: 5px" class="error"><?php echo form_error('seksi', '<small class="text-danger">','</small>');?></div>
-              </div>
-              <div class="form-group">
-                <label for="tempat">Tanggal</label>
-                <div class="input-group">
-                    <input id="tanggal" type="date" class="form-control" placeholder="tanggal" name="tanggal" autocomplete="off">
-                </div>
-                <div style="margin-top: 5px" class="error"><?php echo form_error('tanggal', '<small class="text-danger">','</small>');?></div>
-              </div>
-              
-              <div class="form-group">
-                <label for="nama">Kegiatan</label>
-                <input type="text" class="form-control" name="kegiatan" id="" placeholder="Masukkan kegiatan">
-                <div style="margin-top: 5px" class="error"><?php echo form_error('kegiatan', '<small class="text-danger">','</small>');?></div>
-              </div>
-              <center>
-              <div class="form-group">
-                <input name="input" id="input" type="submit" value="simpan" class="btn btn-primary py-2 px-4">
-              </div>
-          </center>
-            </form>
-            <?php
-              
-            ?>
-          </div>
-    </div>
+            </div>
+        </div>
+        </div>
     </section>
 
-    <!-- footer -->
-     <footer class="footer">
+<!-- footer -->
+<footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-9 col-md-10 col-lg-8">
+                    <div class="col-xl-10 col-md-12 col-lg-10">
                         <div class="footer_widget">
                             <div class="footer_logo">
                                 <a href="#">
@@ -148,7 +127,12 @@
                             <div class="socail_links">
                                 <ul>
                                     <li>
-                                        <a href="https://www.instagram.com/bpskabprobolinggo/">
+                                        <a href="#">
+                                            <i class="fa fa-facebook-square"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
                                             <i class="fa fa-instagram"></i>
                                         </a>
                                     </li>
@@ -157,14 +141,19 @@
 
                         </div>
                     </div>
-                    <div class="col-xl-3 col-md-6 col-lg-5">
+                    <div class="col-xl-2 col-md-6 col-lg-2">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Tentang Sistem
+                                service
                             </h3>
-                            <p>Sistem Penjadwalan Dinas BPS Kabupaten Probolinggo merupakan sistem yang dirancang untuk mengatur penjadwalan perjalanan dinas staf BPS Kabupaten Probolinggo</p>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Jadwal</a></li>
+                                <li><a href="#">Daftar Staff</a></li>
+                            </ul>
+
                         </div>
-                    </div> 
+                    </div>
             </div>
         </div>
         <div class="copy-right_text">
@@ -213,7 +202,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
             </div>
         </div>
     </form>
-    <!-- form itself end -->
 
     <!-- form itself end-->
     <form id="test-form2" class="white-popup-block mfp-hide">
@@ -266,9 +254,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script src="<?php echo base_url('asset/js/jquery.magnific-popup.min.js')?>"></script>
     <script src="<?php echo base_url('asset/js/plugins.js')?>"></script>
     <script src="<?php echo base_url('asset/js/gijgo.min.js')?>"></script>
-<!--     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js" integrity="sha512-T/tUfKSV1bihCnd+MxKD0Hm1uBBroVYBOYSk1knyvQ9VyZJpc/ALb4P0r6ubwVPSGB2GvjeoMAJJImBG12TiaQ==" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 
     <!--contact js-->
     <script src="<?php echo base_url('asset/js/contact.js')?>"></script>
@@ -279,51 +264,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> BPS K
     <script src="<?php echo base_url('asset/js/main.js')?>"></script>
 
     <script>
-        $(document).ready(function() {
-            $('.pegawai').select2();
-            let disableddate = [];
-            $('.pegawai').change(function(){
-                let nip = this.value;
-                $.ajax({
-                    url: '<?= base_url() ?>/kasi/getDateAjax',
-                    method: 'post',
-                    data: {nip:nip},
-                    success: 
-                    function(result){
-                        JSON.parse(result).forEach(item => disableddate.push(item))
-
-                        // $('.datepicker').datepicker({
-                        //     format: 'mm/dd/yyyy',
-                        //     beforeShowDay: function(date){
-                        //         dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-                        //         if(result.indexOf(dmy) != -1){
-                        //             return false;
-                        //         }
-                        //         else{
-                        //             return true;
-                        //         }
-                        //     }
-                        // });
-                    }
-                });
-            });
-            $('.datepicker').datepicker({
-                format: 'mm-dd-yyyy',
-                beforeShowDay: function(date){
-                    dmy = date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-                    if(disableddate.indexOf(dmy) != -1){
-                        return false;
-                    }
-                    else{
-                        return true;
-                    }
-                }
-            });
-        });
-    </script>
-    <script>
         document.getElementById('find').style.background = '#26C867';
-        // In your Javascript (external .js resource or <script> tag)
     </script>
 </body>
 

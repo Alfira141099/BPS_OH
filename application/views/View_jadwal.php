@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
+<?php $level = $this->session->userdata('level');?>
 
 <head>
     <meta charset="utf-8">
@@ -26,6 +27,7 @@
     <link rel="stylesheet" href="<?php echo base_url('asset/css/style.css')?>">
     <link rel="stylesheet" href="<?php echo base_url('asset/css/table.css')?>">
     <link href="<?php echo base_url('asset/tabel/dataTables.bootstrap4.min.css');?>" rel="stylesheet">
+
 </head>
 
 <body>
@@ -47,7 +49,12 @@
                             <div class="main-menu  d-none d-lg-block position-relative text-right">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="" href="<?php echo base_url('Bps_oh/index')?>">home</a></li>
+                                        <li><a class="" href="<?php echo base_url('Bps_kasi')?>">home</a></li>
+                                        <?php if($level=='Kasi'){
+                                            echo '
+                                        <li><a class="" href="'.base_url('Kasi/index').'">Input Jadwal</a></li>
+                                        <li><a class="" href="'.base_url('Input_pegawai/index').'">Input Pegawai</a></li>
+                                        <li><a class="" href="'.base_url('Pegawai/index').'">Data Pegawai</a></li>';}?>
                                         <li><a class="" href="<?php echo base_url('Login/logout')?>">Logout</a></li>
                                     </ul>
                                 </nav>
@@ -79,30 +86,60 @@
                 </div>
             </div>
 
-        <div class= "box-body">
-             <div class="table-responsive">
-            <table class="table" id="dataTable">
+            <div class= "box-body">
+            <?php if($this->session->flashdata('message')) : ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-danger col-6 text-center" >
+                    <p class="text-dark"><?= ucwords($this->session->flashdata('message')) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+            <?php if($this->session->flashdata('success')) : ?>
+            <div class="row justify-content-center">
+                <div class="alert alert-success col-6 text-center" >
+                    <p class="text-dark"><?= ucwords($this->session->flashdata('success')) ?></p>
+                </div>
+            </div>
+            <?php endif; ?>
+            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th style="text-align: center;">No</th>
+                        <th>Nama</th>
                         <th>Tanggal</th>
                         <th>Seksi</th>
                         <th>Kegiatan</th>
+                        <?php if($level=='Kasi'){
+                            echo '
+                        <th>Aksi</th>';
+                        }?>
                     </tr>
                 </thead>
                 <tbody>
-                   <?php
-                   if(is_array($jadwal)){
+                <?php
                     $no = 1;
+                    foreach ($jadwal as $jdl) :
                         ?>
                         <tr>
-                            <td style="text-align: center;"><?php echo $no++ ?></td>
-                            <td><?php echo $jadwal['TANGGAL'] ?></td>
-                            <td><?php echo $jadwal['SEKSI'] ?></td>
-                            <td><?php echo $jadwal['KEGIATAN'] ?></td>
+                        <td style="text-align: .center;"><?php echo $no++ ?></td>
+                            <td><?php echo $jdl->NAMA ?></td>
+                            <td><?php echo date("j F Y",strtotime($jdl->TANGGAL)) ?></td>
+                            <td><?php echo $jdl->SEKSI ?></td>
+                            <td><?php echo $jdl->KEGIATAN ?></td>
+                            <td><?php if($level=='Kasi'){
+                                ?>
+                                <span onclick="javascript: return confirm('Anda yakin hapus?')">
+                                    <?php echo anchor('Jadwal/hapus/'.$jdl->id, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
+                                </span>
+                                <span>
+                                    <?php echo anchor('Jadwal/edit/'.$jdl->id, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?>
+                                </span>
+                                <?php }
+                                ?>
+                            </td>
                         </tr>
-                   <?php
-                }
+                    <?php
+                    endforeach;
                     ?>
                 </tbody>
             </table>
@@ -111,8 +148,8 @@
         </div>
     </div>
 
-    <!-- footer -->
-     <footer class="footer">
+   <!-- footer -->
+   <footer class="footer">
         <div class="footer_top">
             <div class="container">
                 <div class="row">
