@@ -34,7 +34,7 @@
           <div class="login_inner">
                 <div class="logo text-center">
                     <a href="#">
-                        <img src="<?php echo base_url('asset/img/LogoBPS.png')?>" alt="" height="70" weight="90">
+                        <img src="<?php echo base_url('asset/img/travel - 2.png')?>" alt="" height="180" weight="150">
                     </a>
                 </div>
                 <h3><center>SIMPENAS</center></h3>
