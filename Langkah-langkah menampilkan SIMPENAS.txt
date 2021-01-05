@@ -4,3 +4,11 @@
 4. database menggunakan phpmyadmin, import database dari foleder "BPS_OH"
 5. file database ada di dalam folder "BPS_OH-database" dengan nama bps_oh.sql
 4. Buka browser, ketik "localhost/BPS_OH" maka akan muncul tampilan SI nya
+
+Akun :
+1. Masuk sebagai kasi
+	username : kasi
+	password : 123456
+2. Masuk sebagai staf 
+	username : staf
+	password : 123456
