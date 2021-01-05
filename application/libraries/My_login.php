@@ -17,7 +17,7 @@ class My_login{
 			$level = $check->level;
 
 			//proses create session untuk login
-			$this->CI->session->set_userdata('id_user',$id);
+			$this->CI->session->set_userdata('id_user',$id_user);
 			$this->CI->session->set_userdata('username',$username);
 			$this->CI->session->set_userdata('password',$password);
 			$this->CI->session->set_userdata('level',$level);
@@ -30,12 +30,19 @@ class My_login{
 			redirect(base_url('Login'));
 		}
 	}
-	public function check_login(){
+	public function check_login($status = false){
+		// var_dump($this->CI->session->userdata('username'));die;
 		//cek status login username, jika tidak ada atau kosong, maka redirect ke login
-		if($this->CI->session->userdata('username') == ""){
-			//kalau username kosong, suruh login lagi
-			$this->CI->session->set_flashdata('warning', 'Anda belum login');
-			redirect(base_url('Login'));
+		if ($status) {
+			if($this->CI->session->userdata('username')){
+				redirect(base_url('bps_kasi'));
+			}
+		}else{
+			if(!$this->CI->session->userdata('username')){
+				//kalau username kosong, suruh login lagi
+				$this->CI->session->set_flashdata('warning', 'Anda belum login');
+				redirect(base_url('Login'));
+			}
 		}
 	}
 	public function logout(){

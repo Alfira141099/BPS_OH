@@ -2,12 +2,11 @@
 class Bps_kasi extends CI_Controller{
 	public function __construct()
     {
-        parent::__construct();
+		parent::__construct();
+		$this->my_login->check_login();
         $this->load->model('Model_pegawai');
         $this->load->model('Model_kasi');
         //proteksi halaman dengan library my_login
-        $this->my_login->check_login();
-
     }
 
     public function index()

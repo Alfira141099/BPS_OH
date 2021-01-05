@@ -101,7 +101,7 @@
                 </div>
             </div>
             <?php endif; ?>
-            <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-striped dataTable no-footer" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
                         <th style="text-align: center;">No</th>
@@ -126,17 +126,16 @@
                             <td><?php echo date("j F Y",strtotime($jdl->TANGGAL)) ?></td>
                             <td><?php echo $jdl->SEKSI ?></td>
                             <td><?php echo $jdl->KEGIATAN ?></td>
-                            <td><?php if($level=='Kasi'){
-                                ?>
+							<?php if($level=='Kasi') { ?>
+							<td>
                                 <span onclick="javascript: return confirm('Anda yakin hapus?')">
                                     <?php echo anchor('Jadwal/hapus/'.$jdl->id, '<div class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></div>') ?>
                                 </span>
                                 <span>
                                     <?php echo anchor('Jadwal/edit/'.$jdl->id, '<div class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></div>') ?>
                                 </span>
-                                <?php }
-                                ?>
-                            </td>
+							</td>
+							<?php } ?>
                         </tr>
                     <?php
                     endforeach;

@@ -1,7 +1,15 @@
 <?php
 class Login extends CI_Controller{
+	
+	public function __construct()
+	{
+		parent::__construct();
+
+	}
+	
 	//fungsi di dalam class yang di eksekusi pertama kali saat class itu dipanggil
 	public function index(){
+		$this->my_login->check_login(true);
 		//validasi input untuk login
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
