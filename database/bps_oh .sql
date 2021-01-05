@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2020 at 03:35 AM
--- Server version: 10.4.10-MariaDB
--- PHP Version: 7.3.12
+-- Generation Time: Jan 05, 2021 at 05:43 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -44,30 +44,21 @@ INSERT INTO `jadwal` (`id`, `NIP`, `TANGGAL`, `SEKSI`, `KEGIATAN`) VALUES
 (1, '197409271995121001', '2020-12-23', 'Sosial', 'lapang'),
 (20, '196307231990031002', '2020-12-16', 'TU', 'lapangan'),
 (22, '196307231990031002', '2020-12-16', 'Produksi', 'produksi'),
-(23, '196307231990031002', '2020-12-24', 'Pengolahan', 'produksi'),
-(24, '196307231990031002', '2020-12-31', 'TU', 'Sosialllllllllllllllllll'),
-(26, '196307231990031002', '2020-12-16', 'Produksi', 'lapangan'),
-(27, '196307231990031002', '2020-12-16', 'Pengolahan', 'tes'),
-(28, '196307231990031002', '2020-12-27', 'Produksi', 'sensus'),
-(29, '197211111994011001', '2020-12-27', 'Sosial', 'dghd'),
-(30, '196307231990031002', '2020-12-27', 'Sosial', 'vryyu'),
-(31, '196307231990031002', '2020-12-27', 'Pengolahan', 'jkk'),
-(32, '196307231990031002', '2020-12-27', 'Produksi', 'asadsa'),
-(33, '196307231990031002', '2020-12-27', 'Sosial', 'yuioiy'),
-(34, '197409271995121001', '2020-12-28', 'Pengolahan', 'dd'),
-(35, '197409271995121001', '2020-12-28', 'Pengolahan', 'dd'),
-(36, '197409271995121001', '2020-12-28', 'TU', 'hjk'),
-(37, '196307231990031002', '2020-12-22', 'Pengolahan', 'dad'),
-(38, '196307231990031002', '2020-12-22', 'Pengolahan', 'sd'),
-(39, '196307231990031002', '2020-12-22', 'Pengolahan', 'dsdsad'),
-(40, '196307231990031002', '2020-12-22', 'Pengolahan', 'sds'),
-(41, '197110131998031001', '0000-00-00', 'TU', 'fgg'),
-(46, '196404222007011004', '2020-12-02', 'TU', 'Kegiatan Produksi'),
-(47, '196404222007011004', '2020-12-01', 'Pengolahan', 'Produksi 2'),
-(48, '196404222007011004', '2020-12-03', 'Pengolahan', 'asd'),
-(49, '196404222007011004', '2020-12-04', 'TU', 'oleh'),
-(50, '196404222007011004', '2020-12-27', 'Produksi', 'asd'),
-(51, '197110131998031001', '2020-12-30', 'TU', 'asd');
+(0, '198304062008011008', '2020-12-31', 'Seksi Neraca dan Analisis Wilayah', 'Lapang');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kasi`
+--
+
+CREATE TABLE `kasi` (
+  `id` int(11) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `NIP` varchar(20) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -124,10 +115,12 @@ CREATE TABLE `seksi` (
 --
 
 INSERT INTO `seksi` (`id`, `seksi`) VALUES
-(1, 'TU'),
-(2, 'Pengolahan'),
-(3, 'Produksi'),
-(4, 'Sosial');
+(1, 'Tata Usaha'),
+(2, 'Seksi IPDS'),
+(3, 'Seksi Statistik Produksi'),
+(4, 'Seksi Statistik Sosial'),
+(5, 'Seksi Neraca dan Analisis Wilayah'),
+(6, 'Seksi Statistik Distribusi');
 
 -- --------------------------------------------------------
 
@@ -155,12 +148,11 @@ INSERT INTO `user` (`id_user`, `username`, `password`, `level`) VALUES
 --
 
 --
--- Indexes for table `jadwal`
+-- Indexes for table `kasi`
 --
-ALTER TABLE `jadwal`
+ALTER TABLE `kasi`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `NIP` (`NIP`),
-  ADD KEY `SEKSI` (`SEKSI`);
+  ADD KEY `NIP` (`NIP`);
 
 --
 -- Indexes for table `pegawai`
@@ -186,33 +178,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `jadwal`
---
-ALTER TABLE `jadwal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
-
---
 -- AUTO_INCREMENT for table `seksi`
 --
 ALTER TABLE `seksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `jadwal`
---
-ALTER TABLE `jadwal`
-  ADD CONSTRAINT `jadwal_ibfk_1` FOREIGN KEY (`SEKSI`) REFERENCES `seksi` (`seksi`),
-  ADD CONSTRAINT `jadwal_ibfk_2` FOREIGN KEY (`NIP`) REFERENCES `pegawai` (`NIP`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
